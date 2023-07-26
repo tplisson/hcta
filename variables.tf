@@ -1,15 +1,5 @@
-# Terraform Input Variables
+### Sample variables
 
-Documentation:
-https://developer.hashicorp.com/terraform/language/values/variables
-
-
-## Basics
-
-Declaring an input variable using the `variable` block 
-
-`variables.tf` file:
-```hcl
 variable "some_var" {
   description = "Some description"
   type        = string             ### can be: string, number, bool, list()... etc.                
@@ -37,10 +27,9 @@ variable "docker_ports" {
     }
   ]
 }
-```
 
-To reference that variable in your Terraform code:
-```hcl
+### Referencing a variable
+
 variable "region" {
   type        = string
   description = "The AWS region for the infrastructure"
@@ -57,29 +46,9 @@ resource "aws_instance" "example" {
   ami           = "ami-0c55b159cbfafe1f0"
   region        = var.region ### <<<< here
 }
-```
 
+### Primitive Types
 
-### Type Constraints
-
-To restrict the `type` of value that will be accepted as the value for a variable. This is optional but best practice.
-
-https://developer.hashicorp.com/terraform/language/expressions/type-constraints
-
-Main types supported:
-- Primitive 
-- Complex
-  - Collection
-  - Structural
-
-
-
-#### Primitive types:
-- `string = "hello"`
-- `number =  123 | 6.28`
-- `bool   = true | false`  
-
-```hcl
 variable "string_var" {
   description = "Azure resource group name"
   type        = string
@@ -95,21 +64,10 @@ variable "bool_var" {
   type    = bool
   default = false
 }
-```
 
-#### Complex types:
-- Collection
-- Structural
 
-##### Collection Types  
+### Collection Types
 
-allows multiple values of ***one*** other type to be grouped together as a single value. 
-
-- `list(<TYPE>)`
-- `set(<TYPE>)`
-- `map(<TYPE>)`
-
-```hcl
 variable "list_var" {
   description = "ordered sequence of values"
   type        = list(string)
@@ -127,16 +85,10 @@ variable "instance_tags" {
   type        = map(string)
   default     = { Name = "my-instance" }
 }
-```
 
-##### Structural Types  
+### Structural Types
 
-allows multiple values of ***several*** distinct types to be grouped together as a single value. 
 
-- `tuple([<TYPE>, ...])`
-- `object({<ATTR NAME> = <TYPE>, ... })`
-
-```hcl
 variable "tuple_var" {
   description = "fixed-length collection that can contain values of different data types"
   type        = tuple([string, number, bool])
@@ -148,16 +100,9 @@ variable "object_var" {
   type        = object({ name = string, age = number })
   default     = { name = "John", age = 52 }
 }
-```
-
-
-The keyword any may be used to indicate t
 
 ### Custom Validation Rules
 
-validation - A block to define validation rules, usually in addition to type constraints.
-
-```hcl
 variable "another_var" {
   type    = string
   default = "Hello"
@@ -177,18 +122,3 @@ variable "image_id" {
     error_message = "The image_id value must be a valid AMI id, starting with \"ami-\"."
   }
 }
-```
-
-
-### Type Constraints
-https://developer.hashicorp.com/terraform/language/expressions/type-constraints
-
-
-
-
-## Complex Varaibles
-
-### Collections
-
-### Structural
-
