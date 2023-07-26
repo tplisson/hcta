@@ -11,6 +11,10 @@ https://terraformguru.com/terraform-certification-using-aws-cloud/
 
 ---
 
-[Variables](variables/README.md)  
+[Terraform State](state/README.md)  
 
-[Output](output/README.md)
+[Terraform Input Variables](variables/README.md)  
+
+[Terraform Plan Outputs](outputs/README.md)  
+
+[Terraform Built-in Functions](builtins/README.md)  
