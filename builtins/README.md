@@ -7,7 +7,7 @@ https://developer.hashicorp.com/terraform/language/functions
 Test Terraform Built-In function with the Terraform console
 
 ```console
-$ terraform console
+terraform console
 ```
 
 ```console
