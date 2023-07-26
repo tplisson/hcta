@@ -15,6 +15,6 @@ https://terraformguru.com/terraform-certification-using-aws-cloud/
 **Topic**	| TF files |
 --------- | -------- |
 [Terraform State](state/README.md)  | [Files](state/)  |
-[Terraform Input Variables](variables/README.md)  | [Files](variables/main.tf)  |
-[Terraform Plan Outputs](outputs/README.md)  | [Files](outputs/main.tf) |
-[Terraform Built-in Functions ](builtins/README.md)  | [Files](builtins/main.tf)  |
+[Terraform Input Variables](variables/README.md)  | [Files](variables/)  |
+[Terraform Plan Outputs](outputs/README.md)  | [Files](outputs/) |
+[Terraform Built-in Functions ](builtins/README.md)  | [Files](builtins/)  |
