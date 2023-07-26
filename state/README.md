@@ -1,21 +1,14 @@
 # Terraform State
 
 Documentation:
-https://developer.hashicorp.com/terraform/language/state
+https://developer.hashicorp.com/terraform/language/state/
 
-## Basics
+## Overview
 
-Each output value exported by a module must be declared using an output block:
+Terraform must store state about your managed infrastructure and configuration. This state is used by Terraform to map real world resources to your configuration, keep track of metadata, and to improve performance for large infrastructures.
 
-
-Declaring an output value using the `output` block 
-
-`output.tf` file:
-```hcl
-output "instance_ip_addr" {
-  value = aws_instance.server.private_ip
-}
-```
+- Local state: By default, Terraform stores state locally in a file named `terraform.tfstate`. 
+- Remote State: Terraform supports storing state in Terraform Cloud, HashiCorp Consul, Amazon S3, Azure Blob Storage, Google Cloud Storage, Alibaba Cloud OSS, and more.
 
 ### Terraform State List  
 
