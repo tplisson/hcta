@@ -59,7 +59,9 @@ In this example, the `for_each` loop iterates over the `local.security_groups` m
 
 ```console
 terraform apply -auto-approve
+```
 
+```console
 Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the
 following symbols:
   + create
