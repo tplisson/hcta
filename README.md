@@ -30,9 +30,9 @@ Expiration |	2 years
 
 ## Exam objectives
 
-Section | Description |
+**Section** | **Description** |
 ------- | ----------- |  
-**1**	| [**Understand infrastructure as code (IaC) concepts**](sections/section1)
+1	| [Understand infrastructure as code (IaC) concepts](sections/section1)
 2	| [Understand the purpose of Terraform (vs other IaC)](sections/section2)
 3	| [Understand Terraform basics](sections/section3)
 4	| [Use Terraform outside of core workflow](sections/section4)
