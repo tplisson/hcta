@@ -228,3 +228,47 @@ terraform state rm aws_vpc.to_be_deleted
 Removed aws_vpc.to_be_deleted
 Successfully removed 1 resource instance(s).
 ```
+
+
+## Remote state
+
+A backend defines where Terraform stores its state data files.
+
+Available Backends
+- [Local](#Local)
+- [Remote](#Remote)
+- [Azure Blob Storage ](#Azure Blob Storage)
+
+### Local 
+
+By default, local file call `terraform.tfstate`
+
+### Remote 
+
+Using Terraform Cloud 
+
+```hcl
+terraform {
+  backend "remote" {
+    organization = "example_corp"
+
+    workspaces {
+      name = "my-app-prod"
+    }
+  }
+}
+```
+
+### Azure Blob Storage 
+
+```hcl
+terraform {
+  backend "azurerm" {
+    resource_group_name  = "StorageAccount-ResourceGroup"
+    storage_account_name = "abcd1234"
+    container_name       = "tfstate"
+    key                  = "prod.terraform.tfstate"
+  }
+}
+```
+
