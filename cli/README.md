@@ -18,22 +18,37 @@ terraform destroy
 
 See section on [Terraform workplaces](../workspaces/)
 
-## Common CLI commands
+## Format
 
+Formating Terraform code for readability and consistency
 ```console
 terraform fmt 
 ```
 
-Tainting a resource
+## Validate
+
+Running checks to verify whether a configuration is syntactically valid and internally consistent
+
+Formating Terraform code for readability and consistency
 ```console
-terraform taint <RESOURCE_ADDRESS>
+terraform validate 
 ```
+```console
+Success! The configuration is valid.
+```
+
+## Taint
 
 Use `taint` to force a resource to be destroyed and recreated. 
 Use cases:
 - trigger `provisionners` to run
 - replace misbehaving resources forcefully
 - trigger automation initiated during resource recreation (API calls...etc)
+
+Tainting a resource
+```console
+terraform taint <RESOURCE_ADDRESS>
+```
 
 Tainting an AWS subnet:  
 
@@ -93,7 +108,7 @@ Apply complete! Resources: 1 added, 0 changed, 1 destroyed.
 
 ## Shell aliases
 
-Using aliases in Bash / Zsh shell 
+Using aliases in Bash / Zsh shell can be handy :)
 ```zsh
 alias tf='terraform'
 alias tfi='terraform init'

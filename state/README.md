@@ -232,6 +232,8 @@ Successfully removed 1 resource instance(s).
 
 ## Remote state
 
+Storing TF state remotely provides granular access, integrity, security, availability, and collaboration.
+
 A backend defines where Terraform stores its state data files.
 
 Available Backends
@@ -246,7 +248,7 @@ Available Backends
 
 ### Local 
 
-By default, local file call `terraform.tfstate`
+By default, TF state is stored in local file `terraform.tfstate`
 
 ### Remote 
 
