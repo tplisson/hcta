@@ -38,7 +38,7 @@ Exam Details  |   |
 Assessment Type	| Multiple choice
 Format	| Online proctored
 Duration	| 1 hour
-Price	| $70.50 USD ~plus locally applicable taxes and fees.~ ~Free retake not included~
+Price	| $70.50 USD ^plus locally applicable taxes and fees Free retake not included^
 Language	| English
 Expiration |	2 years
 
