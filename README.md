@@ -1,4 +1,4 @@
-# HCTA Terraform Associate Certification (003) — Study Guide
+# HCTA Terraform Associate Certification (003) — Study Notes
 
 [Exam objectives](https://www.hashicorp.com/certification/terraform-associate)
 
