@@ -28,19 +28,24 @@ Use cases:
 
 Example:
 
+```console
+terraform state list
 ```
-tf state list
-```
-```workflow
+```terraform
 aws_subnet.subnet1
 aws_vpc.cli
 ```
 
+```console
+terraform taint aws_subnet.subnet1
+```
 ```terraform
-$ terraform taint aws_subnet.subnet1
 Resource instance aws_subnet.subnet1 has been marked as tainted.
-
-$ terraform apply --auto-approve
+```
+```
+terraform apply --auto-approve
+```
+```terraform
 aws_vpc.cli: Refreshing state... [id=vpc-010cac9b5d463d82e]
 aws_subnet.subnet1: Refreshing state... [id=subnet-01e5c24d4dbcd8a99]
 
