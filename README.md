@@ -25,5 +25,6 @@ https://terraformguru.com/terraform-certification-using-aws-cloud/
 [Terraform Plan Outputs](outputs/README.md)  | [Files](outputs/) |
 [Terraform Built-in Functions ](builtins/README.md)  | [Files](builtins/)  |
 [Terraform Dynamic Blocks](dynamic/README.md)  | [Files](dynamic/)  |
+[Debugging Terraform](debugging/README.md)  | [Files](debugging/)  |
 [Terraform Cloud](tfc/README.md)  | [Files](tfc/)  |
 [Terraform Enterprise](tfe/README.md)  | [Files](tfe/)  |
