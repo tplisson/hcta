@@ -15,21 +15,6 @@
 
 ---  
 
-**Topic**	| TF files |
---------- | -------- |
-[Terraform CLI](cli/README.md)  | [Files](cli/)  |
-[Terraform Workspaces](workspaces/README.md)  | [Files](workspaces/)  |
-[Terraform State](state/README.md)  | [Files](state/)  |
-[Terraform Input Variables](variables/README.md)  | [Files](variables/)  |
-[Terraform Plan Outputs](outputs/README.md)  | [Files](outputs/) |
-[Terraform Built-in Functions ](builtins/README.md)  | [Files](builtins/)  |
-[Terraform Dynamic Blocks](dynamic/README.md)  | [Files](dynamic/)  |
-[Debugging Terraform](debugging/README.md)  | [Files](debugging/)  |
-[Terraform Cloud](tfc/README.md)  | [Files](tfc/)  |
-[Terraform Enterprise](tfe/README.md)  | [Files](tfe/)  |
-
-
-
 ## Exam details
 
 Exam Details  |   |
@@ -41,8 +26,9 @@ Price	| $70.50 USD <sub>plus locally applicable taxes and fees</sub>
 Language	| English
 Expiration |	2 years
 
-## Exam objectives
+---  
 
+## Exam objectives
 
 Section | Description |
 ------- | ----------- |  
@@ -58,3 +44,19 @@ Section | Description |
 
 
 
+---  
+
+**Topic**	| TF files |
+--------- | -------- |
+[Terraform CLI](cli/README.md)  | [Files](cli/)  |
+[Terraform Workspaces](workspaces/README.md)  | [Files](workspaces/)  |
+[Terraform State](state/README.md)  | [Files](state/)  |
+[Terraform Input Variables](variables/README.md)  | [Files](variables/)  |
+[Terraform Plan Outputs](outputs/README.md)  | [Files](outputs/) |
+[Terraform Built-in Functions ](builtins/README.md)  | [Files](builtins/)  |
+[Terraform Dynamic Blocks](dynamic/README.md)  | [Files](dynamic/)  |
+[Debugging Terraform](debugging/README.md)  | [Files](debugging/)  |
+[Terraform Cloud](tfc/README.md)  | [Files](tfc/)  |
+[Terraform Enterprise](tfe/README.md)  | [Files](tfe/)  |
+
+---  
