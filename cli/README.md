@@ -34,7 +34,7 @@ aws_subnet.subnet1
 aws_vpc.cli
 ```
 
-```patch
+```hs
 $ terraform taint aws_subnet.subnet1
 Resource instance aws_subnet.subnet1 has been marked as tainted.
 
