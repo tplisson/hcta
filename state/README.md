@@ -235,9 +235,14 @@ Successfully removed 1 resource instance(s).
 A backend defines where Terraform stores its state data files.
 
 Available Backends
-- [Local](#Local)
-- [Remote](#Remote)
-- [Azure Blob Storage ](#Azure Blob Storage)
+- [Local](#local)
+- [Remote](#remote)
+- [Amazon S3](#amazon-s3)
+- [Azure Blob Storage ](#azure-blob-storage)
+- [Consul](#consul)
+- [Google Cloud Storage](#google-cloud-storage)
+- [Kubernetes](#kubernetes)
+- [PostGRES Database](#postgres-database)
 
 ### Local 
 
@@ -259,6 +264,18 @@ terraform {
 }
 ```
 
+### Amazon S3
+
+```hcl
+terraform {
+  backend "s3" {
+    bucket = "mybucket"
+    key    = "path/to/my/key"
+    region = "us-east-1"
+  }
+}
+```
+
 ### Azure Blob Storage 
 
 ```hcl
@@ -272,3 +289,46 @@ terraform {
 }
 ```
 
+### Consul
+
+```hcl
+terraform {
+  backend "consul" {
+    address = "consul.example.com"
+    scheme  = "https"
+    path    = "full/path"
+  }
+}
+```
+
+### Google Cloud Storage 
+
+```hcl
+terraform {
+  backend "gcs" {
+    bucket  = "tf-state-prod"
+    prefix  = "terraform/state"
+  }
+}
+```
+
+### Kubernetes
+
+```hcl
+terraform {
+  backend "kubernetes" {
+    secret_suffix    = "state"
+    config_path      = "~/.kube/config"
+  }
+}
+```
+
+### PostGRES Database
+
+```hcl
+terraform {
+  backend "pg" {
+    conn_str = "postgres://user:pass@db.example.com/terraform_backend"
+  }
+}
+```
