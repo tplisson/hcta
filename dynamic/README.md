@@ -10,15 +10,6 @@ Dynamic blocks in Terraform provide a powerful and flexible way to handle multip
 
 The syntax for a dynamic block is as follows:
 
-```hcl
-dynamic "BLOCK_TYPE" {
-  for_each = EXPRESSION
-  content {
-    # Nested block configuration
-  }
-}
-```
-
 ```terraform
 dynamic "BLOCK_TYPE" {
   for_each = EXPRESSION
