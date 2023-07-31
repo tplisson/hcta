@@ -10,7 +10,7 @@ Dynamic blocks in Terraform provide a powerful and flexible way to handle multip
 
 The syntax for a dynamic block is as follows:
 
-```hcl
+```terraform
 dynamic "BLOCK_TYPE" {
   for_each = EXPRESSION
   content {
@@ -29,7 +29,7 @@ Dynamic blocks are particularly useful when you have a variable number of simila
 
 Here is an example of creating multiple `aws_security_group` resources dynamically using a `for_each` loop:
 
-```hcl
+```terraform
 locals {
   security_groups = {
     group1 = ["192.168.1.0/24", "10.0.1.0/24"],
@@ -61,7 +61,7 @@ In this example, the `for_each` loop iterates over the `local.security_groups` m
 terraform apply -auto-approve
 ```
 
-```console
+```terraform
 Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the
 following symbols:
   + create
@@ -212,7 +212,7 @@ Use it in a module to hide details or complexity and make it clean and reusable
 This example creates an Azure virtual machine and dynamically defines multiple network interfaces based on a list of NIC names provided.
 
 
-```hcl
+```terraform
 provider "azurerm" {
   features {}
 }
@@ -298,7 +298,7 @@ Remember to adjust the `nic_names` variable with your desired names for network 
 This example demonstrates how to create multiple Google Compute Engine instances using dynamic blocks.
 
 
-```hcl
+```terraform
 provider "google" {
   credentials = file("<YOUR_GCP_CREDENTIALS_FILE>")
   project     = "<YOUR_GCP_PROJECT_ID>"
@@ -329,7 +329,7 @@ In this example, you need to replace the placeholders enclosed in angle brackets
 
 Additionally, you will need to define the `var.networks` variable in your Terraform configuration. This variable should be a map containing the network configurations for each instance you want to create. Here's an example of how you can define the `var.networks` variable in a `.tfvars` file:
 
-```hcl
+```terraform
 networks = {
   instance1 = {
     network = "default"
@@ -355,7 +355,7 @@ Make sure to adapt the configuration based on your specific requirements, such a
 ## Sample dynamic block for AWS 
 This example is to create an AWS EC2 instance in markdown format:
 
-```hcl
+```terraform
 resource "aws_instance" "example_instance" {
   ami           = "ami-0c55b159cbfafe1f0"
   instance_type = "t2.micro"
@@ -395,7 +395,7 @@ Please make sure to replace the `ami`, `instance_type`, and other values with ap
 Here's an other example for creating an AWS security group rules using dynamic blocks:  
 
 
-```hcl
+```terraform
 resource "aws_security_group" "example" {
   name_prefix = "example-sg"
   vpc_id      = aws_vpc.main.id
