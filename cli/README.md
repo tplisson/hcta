@@ -16,7 +16,7 @@ terraform destroy
 
 ## Terraform Workspaces
 
-See section on [workplaces](../workspaces/)
+See section on [Terraform workplaces](../workspaces/)
 
 ## Common CLI commands
 
@@ -104,7 +104,7 @@ alias tfa='terraform apply -auto-approve'
 alias tfd='terraform destroy -auto-approve'
 ```
   
-  
+
 ```console
  tfv
 ```
