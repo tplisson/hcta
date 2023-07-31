@@ -1,13 +1,12 @@
 # HCTA Terraform Associate Certification (003) — Study Guide
 
-Overview  
-https://www.hashicorp.com/certification/terraform-associate
+[Exam objectives](https://www.hashicorp.com/certification/terraform-associate)
 
-Study Guide  
-https://developer.hashicorp.com/terraform/tutorials/certification-003/associate-study-003
+[Study Guide](https://developer.hashicorp.com/terraform/tutorials/certification-003/associate-study-003)
 
-Demos  
-https://terraformguru.com/terraform-certification-using-aws-cloud/
+[Review Guide](https://developer.hashicorp.com/terraform/tutorials/certification-003/associate-review-003?product_intent=terraform)
+
+[Practical Demos](https://terraformguru.com/terraform-certification-using-aws-cloud/)
 
 <p align="center">
   <img src="images/hcta-badge.webp" {:height="25%" width="25%"}>
@@ -56,3 +55,6 @@ Section | Description |
 7	| [Implement and maintain state](section7)
 8	| [Read, generate, and modify configuration](section8)
 9	| [Understand Terraform Cloud capabilities](section9)
+
+
+
