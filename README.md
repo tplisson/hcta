@@ -38,7 +38,7 @@ Exam Details  |   |
 Assessment Type	| Multiple choice
 Format	| Online proctored
 Duration	| 1 hour
-Price	| $70.50 USD <sub>plus locally applicable taxes and fees. <br>Free retake not included</sub>
+Price	| $70.50 USD <sub>plus locally applicable taxes and fees</sub>
 Language	| English
 Expiration |	2 years
 
@@ -55,4 +55,4 @@ Section | Description |
 6	| [Use the core Terraform workflow](section6)
 7	| [Implement and maintain state](section7)
 8	| [Read, generate, and modify configuration](section8)
-9	| [Understand Terraform Cloud capabilities](section19)
+9	| [Understand Terraform Cloud capabilities](section9)
