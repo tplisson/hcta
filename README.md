@@ -32,15 +32,15 @@ Expiration |	2 years
 
 Section | Description |
 ------- | ----------- |  
-**1**	| [**Understand infrastructure as code (IaC) concepts**](section1)
-2	| [Understand the purpose of Terraform (vs other IaC)](section2)
-3	| [Understand Terraform basics](section3)
-4	| [Use Terraform outside of core workflow](section4)
-5	| [Interact with Terraform modules](section5)
-6	| [Use the core Terraform workflow](section6)
-7	| [Implement and maintain state](section7)
-8	| [Read, generate, and modify configuration](section8)
-9	| [Understand Terraform Cloud capabilities](section9)
+**1**	| [**Understand infrastructure as code (IaC) concepts**](sections/section1)
+2	| [Understand the purpose of Terraform (vs other IaC)](sections/section2)
+3	| [Understand Terraform basics](sections/section3)
+4	| [Use Terraform outside of core workflow](sections/section4)
+5	| [Interact with Terraform modules](sections/section5)
+6	| [Use the core Terraform workflow](sections/section6)
+7	| [Implement and maintain state](sections/section7)
+8	| [Read, generate, and modify configuration](sections/section8)
+9	| [Understand Terraform Cloud capabilities](sections/section9)
 
 
 
@@ -48,15 +48,15 @@ Section | Description |
 
 **Topic**	| TF files |
 --------- | -------- |
-[Terraform CLI](cli/README.md)  | [Files](cli/)  |
-[Terraform Workspaces](workspaces/README.md)  | [Files](workspaces/)  |
-[Terraform State](state/README.md)  | [Files](state/)  |
-[Terraform Input Variables](variables/README.md)  | [Files](variables/)  |
-[Terraform Plan Outputs](outputs/README.md)  | [Files](outputs/) |
-[Terraform Built-in Functions ](builtins/README.md)  | [Files](builtins/)  |
-[Terraform Dynamic Blocks](dynamic/README.md)  | [Files](dynamic/)  |
-[Debugging Terraform](debugging/README.md)  | [Files](debugging/)  |
-[Terraform Cloud](tfc/README.md)  | [Files](tfc/)  |
-[Terraform Enterprise](tfe/README.md)  | [Files](tfe/)  |
+[Terraform CLI](cli/README.md)  | [Files](misc/cli/)  |
+[Terraform Workspaces](workspaces/README.md)  | [Files](misc/workspaces/)  |
+[Terraform State](state/README.md)  | [Files](misc/state/)  |
+[Terraform Input Variables](variables/README.md)  | [Files](misc/variables/)  |
+[Terraform Plan Outputs](outputs/README.md)  | [Files](misc/outputs/) |
+[Terraform Built-in Functions ](builtins/README.md)  | [Files](misc/builtins/)  |
+[Terraform Dynamic Blocks](dynamic/README.md)  | [Files](misc/dynamic/)  |
+[Debugging Terraform](debugging/README.md)  | [Files](misc/debugging/)  |
+[Terraform Cloud](tfc/README.md)  | [Files](misc/tfc/)  |
+[Terraform Enterprise](tfe/README.md)  | [Files](misc/tfe/)  |
 
 ---  
