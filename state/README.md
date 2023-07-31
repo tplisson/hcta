@@ -85,7 +85,9 @@ output "password" {
 ```
 
 ```console
-$ terraform output
+terraform output
+```
+```terraform
 instance_ips = [
   "54.43.114.12",
   "52.122.13.4",
@@ -95,7 +97,10 @@ lb_address = "my-app-alb-1657023003.us-east-1.elb.amazonaws.com"
 password = <sensitive>
 
 
-$ terraform output instance_ips
+```console
+terraform output instance_ips
+```
+```terraform
 instance_ips = [
   "54.43.114.12",
   "52.122.13.4",
@@ -103,7 +108,10 @@ instance_ips = [
 ]
 
 
-$ terraform output lb_address
+```console
+terraform output lb_address
+```
+```terraform
 "my-app-alb-1657023003.us-east-1.elb.amazonaws.com"
 ```
 
@@ -122,7 +130,9 @@ resource "aws_instance" "example" {
 Now `terraform import` can be run to attach an existing instance to this resource configuration: 
 
 ```console
-$ terraform import aws_vpc.import vpc-05483b423b9e04565
+terraform import aws_vpc.import vpc-05483b423b9e04565 
+```
+```terraform
 aws_vpc.import: Importing from ID "vpc-05483b423b9e04565"...
 aws_vpc.import: Import prepared!
   Prepared aws_vpc for import
@@ -132,8 +142,12 @@ Import successful!
 
 The resources that were imported are shown above. These resources are now in
 your Terraform state and will henceforth be managed by Terraform.
+```
 
-$ terraform state list                                 
+```console
+terraform state list                                 
+```
+```terraform
 aws_instance.my-instance
 aws_vpc.import
 ```
@@ -151,7 +165,9 @@ import {
 ```
 
 ```console
-$ Terraform plan -generate-config-out=generated.tf
+terraform plan -generate-config-out=generated.tf
+```
+```terraform
 aws_vpc.import: Preparing import... [id=vpc-05483b423b9e04565]
 aws_vpc.import: Refreshing state... [id=vpc-05483b423b9e04565]
 ```
@@ -191,10 +207,15 @@ To remove an existing resources from the state file use the `terraform state rm`
 This does not remove the resource from your configuration or destroy the infrastructure itself.
 
 ```console
-$ terraform state list                                                  
+terraform state list
+```
+```terraform
 Removed aws_vpc.to_be_deleted
-
-$ terraform state rm aws_vpc.to_be_deleted
+```
+```console
+terraform state rm aws_vpc.to_be_deleted
+```
+```terraform
 Removed aws_vpc.to_be_deleted
 Successfully removed 1 resource instance(s).
 ```
