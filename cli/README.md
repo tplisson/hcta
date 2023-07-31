@@ -39,18 +39,20 @@ Success! The configuration is valid.
 
 ## Taint
 
-Use `taint` to force a resource to be destroyed and recreated. 
+Use `taint` to force a resource to be destroyed and recreated upon the next `terraform apply`
+
 Use cases:
 - trigger `provisionners` to run
 - replace misbehaving resources forcefully
 - trigger automation initiated during resource recreation (API calls...etc)
+  
 
 Tainting a resource
 ```console
 terraform taint <RESOURCE_ADDRESS>
 ```
 
-Tainting an AWS subnet:  
+Tainting a sample AWS subnet:  
 
 ```console
 terraform state list
