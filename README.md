@@ -19,6 +19,7 @@ https://terraformguru.com/terraform-certification-using-aws-cloud/
 **Topic**	| TF files |
 --------- | -------- |
 [Terraform CLI](cli/README.md)  | [Files](cli/)  |
+[Terraform Workspaces](workspaces/README.md)  | [Files](workspaces/)  |
 [Terraform State](state/README.md)  | [Files](state/)  |
 [Terraform Input Variables](variables/README.md)  | [Files](variables/)  |
 [Terraform Plan Outputs](outputs/README.md)  | [Files](outputs/) |
