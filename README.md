@@ -1,19 +1,18 @@
 # HCTA Terraform Associate Certification (003) — Study Guide
 
-Overview
+Overview  
 https://www.hashicorp.com/certification/terraform-associate
 
-Study Guide
+Study Guide  
 https://developer.hashicorp.com/terraform/tutorials/certification-003/associate-study-003
 
-Demos
+Demos  
 https://terraformguru.com/terraform-certification-using-aws-cloud/
 
 <p align="center">
-  <img src="hcta-badge.webp" {:height="50%" width="50%"}>
+  <img src="hcta-badge.webp" {:height="25%" width="25%"}>
 </p>
 <br/>
-
 
 ---  
 
