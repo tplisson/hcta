@@ -46,17 +46,17 @@ Expiration |	2 years
 
 ---  
 
-**Topic**	| TF files |
---------- | -------- |
-[Terraform CLI](cli/README.md)  | [Files](misc/cli/)  |
-[Terraform Workspaces](workspaces/README.md)  | [Files](misc/workspaces/)  |
-[Terraform State](state/README.md)  | [Files](misc/state/)  |
-[Terraform Input Variables](variables/README.md)  | [Files](misc/variables/)  |
-[Terraform Plan Outputs](outputs/README.md)  | [Files](misc/outputs/) |
-[Terraform Built-in Functions ](builtins/README.md)  | [Files](misc/builtins/)  |
-[Terraform Dynamic Blocks](dynamic/README.md)  | [Files](misc/dynamic/)  |
-[Debugging Terraform](debugging/README.md)  | [Files](misc/debugging/)  |
-[Terraform Cloud](tfc/README.md)  | [Files](misc/tfc/)  |
-[Terraform Enterprise](tfe/README.md)  | [Files](misc/tfe/)  |
+Topic   	| Sample TF files |
+--------- | --------------- |
+[Terraform CLI](cli/README.md)  | [files](misc/cli/)  |
+[Terraform Workspaces](workspaces/README.md)  | [files](misc/workspaces/)  |
+[Terraform State](state/README.md)  | [files](misc/state/)  |
+[Terraform Input Variables](variables/README.md)  | [files](misc/variables/)  |
+[Terraform Plan Outputs](outputs/README.md)  | [files](misc/outputs/) |
+[Terraform Built-in Functions ](builtins/README.md)  | [files](misc/builtins/)  |
+[Terraform Dynamic Blocks](dynamic/README.md)  | [files](misc/dynamic/)  |
+[Debugging Terraform](debugging/README.md)  | [files](misc/debugging/)  |
+[Terraform Cloud](tfc/README.md)  | [files](misc/tfc/)  |
+[Terraform Enterprise](tfe/README.md)  | [files](misc/tfe/)  |
 
 ---  
