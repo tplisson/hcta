@@ -26,7 +26,7 @@ Use cases:
 - replace misbehaving resources forcefully
 - trigger automation initiated during resource recreation (API calls...etc)
 
-Example:
+Tainting an AWS subnet:  
 
 ```console
 terraform state list
