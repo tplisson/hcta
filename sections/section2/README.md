@@ -30,3 +30,4 @@ The core Terraform workflow consists of three stages:
 
 During execution, Terraform will examine the state of the currently running infrastructure, determine what differences exist between the current state and the revised desired state, and indicate the necessary changes that must be applied. When approved to proceed, **only the necessary changes will be applied, leaving existing, valid infrastructure untouched**.
 
+In addition to basic mapping, Terraform stores a cache of the attribute values for all resources in the state. This is the most optional feature of Terraform state and is done only as a **performance improvement**.
