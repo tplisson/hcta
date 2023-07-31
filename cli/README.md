@@ -28,13 +28,15 @@ Use cases:
 
 Example:
 
-```patch
-$ tf state list
+```
+tf state list
+```
+```workflow
 aws_subnet.subnet1
 aws_vpc.cli
 ```
 
-```hs
+```terraform
 $ terraform taint aws_subnet.subnet1
 Resource instance aws_subnet.subnet1 has been marked as tainted.
 
