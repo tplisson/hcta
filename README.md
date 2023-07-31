@@ -10,7 +10,7 @@ Demos
 https://terraformguru.com/terraform-certification-using-aws-cloud/
 
 <p align="center">
-  <img src="hcta-badge.webp">
+  <img src="hcta-badge.webp" {:height="50%" width="50%"}>
 </p>
 <br/>
 ---
