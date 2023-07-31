@@ -15,7 +15,9 @@ Terraform must store state about your managed infrastructure and configuration. 
 To list resources within a Terraform state.
 
 ```console
-$ terraform state list
+terraform state list
+```
+```terraform 
 aws_instance.foo
 aws_instance.bar[0]
 aws_instance.bar[1]
@@ -25,7 +27,9 @@ module.elb.aws_elb.main
 Filtering by Resource  
 
 ```console
-$ terraform state list aws_instance.bar
+terraform state list aws_instance.bar
+```
+```terraform 
 aws_instance.bar[0]
 aws_instance.bar[1]
 ```
@@ -33,7 +37,9 @@ aws_instance.bar[1]
 Filtering by Module  
 
 ```console
-$ terraform state list module.elb
+terraform state list module.elb
+```
+```terraform 
 module.elb.aws_elb.main
 module.elb.module.secgroups.aws_security_group.sg
 ```
@@ -42,8 +48,10 @@ module.elb.module.secgroups.aws_security_group.sg
 
 To provide human-readable output from a state or plan file. 
 
-```hcl
-$ terraform state show module.vpc.aws_subnet.this
+```console
+terraform state show module.vpc.aws_subnet.this
+```
+```terraform 
 resource "aws_subnet" "this" {
     arn                                            = "arn:aws:ec2:us-east-1:312939059436:subnet/subnet-0ea5b69336332dd6e"
     assign_ipv6_address_on_creation                = false
