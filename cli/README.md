@@ -42,7 +42,7 @@ terraform taint aws_subnet.subnet1
 ```terraform
 Resource instance aws_subnet.subnet1 has been marked as tainted.
 ```
-```
+```console
 terraform apply --auto-approve
 ```
 ```terraform
