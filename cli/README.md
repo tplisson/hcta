@@ -3,15 +3,20 @@
 Documentation:
 https://developer.hashicorp.com/terraform/cli/
 
+Terraform workflow
 
 ```console
+terraform init
+terraform fmt
 terraform validate
 terraform plan
 terraform apply
+terraform destroy
 ```
 
 ## Terraform Workspaces
 
+See section on [workplaces](../workspaces/)
 
 ## Common CLI commands
 
@@ -83,4 +88,25 @@ aws_subnet.subnet1: Creating...
 aws_subnet.subnet1: Creation complete after 1s [id=subnet-0b792a26fecba7321]
 
 Apply complete! Resources: 1 added, 0 changed, 1 destroyed.
+```
+
+
+## Shell aliases
+
+Using aliases in Bash / Zsh shell 
+```zsh
+alias tf='terraform'
+alias tfi='terraform init'
+alias tff='terraform fmt'
+alias tfv='terraform validate'
+alias tfp='terraform plan'
+alias tfa='terraform apply -auto-approve'
+alias tfd='terraform destroy -auto-approve'
+```
+
+```console
+ tfv
+```
+```terraform
+Success! The configuration is valid.
 ```
