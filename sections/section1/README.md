@@ -8,7 +8,6 @@ Section | Description |
 **1**	| **Understand infrastructure as code (IaC) concepts**
 1a	| Explain what IaC is
 1b	| Describe advantages of IaC patterns
-------- | ----------- |  
 
 ---  
 
