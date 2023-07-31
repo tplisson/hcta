@@ -77,6 +77,7 @@ resource "aws_subnet" "this" {
 
 Extract the value of an output variable from the state file.
 
+`outputs.tf` file:
 ```hcl
 output "instance_ips" {
   value = aws_instance.web.*.public_ip
@@ -114,7 +115,7 @@ instance_ips = [
   "52.122.13.4",
   "52.4.116.53"
 ]
-
+```
 
 ```console
 terraform output lb_address
