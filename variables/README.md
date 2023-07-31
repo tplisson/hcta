@@ -184,11 +184,3 @@ variable "image_id" {
 https://developer.hashicorp.com/terraform/language/expressions/type-constraints
 
 
-
-
-## Complex Varaibles
-
-### Collections
-
-### Structural
-
