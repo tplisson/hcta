@@ -1,4 +1,4 @@
-# HCTA Section 2 - Interact with Terraform modules
+# HCTA Section 5 - Interact with Terraform modules
 
 ## Exam objectives
 

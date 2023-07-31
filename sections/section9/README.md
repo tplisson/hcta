@@ -1,6 +1,6 @@
 # HCTA Section 9 - Terraform Cloud
 
-Documentation:
+Documentation:  
 https://developer.hashicorp.com/terraform/cloud-docs
 
 ## Exam objectives
