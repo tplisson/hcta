@@ -10,6 +10,10 @@ terraform plan
 terraform apply
 ```
 
+## Terraform Workspaces
+
+
+## Common CLI commands
 
 ```console
 terraform fmt 

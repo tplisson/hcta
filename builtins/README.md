@@ -10,7 +10,7 @@ Test Terraform Built-In function with the Terraform console
 terraform console
 ```
 
-```console
+```terraform
 > timestamp()
 "2023-07-25T14:37:11Z"
 
