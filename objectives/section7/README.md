@@ -37,7 +37,7 @@ terraform {
 
 If supported by your backend*, Terraform will lock your state for all operations that could write state. This prevents others from acquiring the lock and potentially corrupting your state.
 
-* Note: Some backends act like plain "remote disks" for state files; others support locking the state while operations are being performed, which helps prevent conflicts and inconsistencies.
+  *Note*: Some backends act like plain "remote disks" for state files; others support locking the state while operations are being performed, which helps prevent conflicts and inconsistencies.
 
 ---  
 
@@ -52,7 +52,7 @@ Usage:
 ```console
 terraform login [hostname]
 ```
-Note: If you don't provide an explicit hostname, Terraform will assume you want to log in to Terraform Cloud at `app.terraform.io`.
+  *Note*: If you don't provide an explicit hostname, Terraform will assume you want to log in to Terraform Cloud at `app.terraform.io`.
 
 ### `credentials` blocks  
 
