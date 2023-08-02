@@ -1,10 +1,10 @@
-# HCTA Section 6 -- Use the core Terraform workflow
+# HCTA Section 6 -- The core Terraform workflow
 
 ## Exam objectives
 
 
-Section | Description |
-------- | ----------- |  
+Section | Description    |
+------- | -------------- |  
 **6** | **Use the core Terraform workflow**
 6a | [Describe Terraform workflow ( Write -> Plan -> Create )](#6a---describe-terraform-workflow--write---plan---create)
 6b | [Initialize a Terraform working directory (terraform init)](#6b---initialize-a-terraform-working-directory-terraform-init)
