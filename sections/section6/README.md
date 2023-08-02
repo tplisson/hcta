@@ -438,4 +438,13 @@ Destroy complete! Resources: 2 destroyed.
 
 ## 6g	- Apply formatting and style adjustments to a configuration (terraform fmt)
 
+The `terraform fmt` command is used to rewrite Terraform configuration files to a canonical format and style.   
+
+```console
+terraform fmt
+```
+```terraform
+main.tf
+```  
+
 ---  
