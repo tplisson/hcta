@@ -52,7 +52,7 @@ Usage:
 ```console
 terraform login [hostname]
 ```
-  *Note*: If you don't provide an explicit hostname, Terraform will assume you want to log in to Terraform Cloud at `app.terraform.io`.
+*  *Note*: If you don't provide an explicit hostname, Terraform will assume you want to log in* to Terraform Cloud at `app.terraform.io`.
 
 ### `credentials` blocks  
 
