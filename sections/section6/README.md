@@ -440,8 +440,8 @@ Destroy complete! Resources: 2 destroyed.
 
 The `terraform fmt` command is used to rewrite Terraform configuration files to a canonical format and style.   
 
-BEFORE
 ```hcl
+### BEFORE
 resource "aws_subnet" "subnet1" {
   vpc_id = aws_vpc.section6.id  #### not aligned
   cidr_block = "10.0.0.0/24"
@@ -451,16 +451,16 @@ resource "aws_subnet" "subnet1" {
   }
 }
 ```
-
+  
 ```console
 terraform fmt
 ```
 ```terraform
 main.tf
 ```  
-
-AFTER
+  
 ```hcl
+### AFTER
 resource "aws_subnet" "subnet1" {
   vpc_id     = aws_vpc.section6.id #### aligned
   cidr_block = "10.0.0.0/24"
