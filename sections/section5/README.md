@@ -69,13 +69,14 @@ resource "aws_elb" "example" {
 
 ## 5c - Describe variable scope within modules/child modules
 
-
+```
 ├── main.tf
 └── modules
     └── s3
         ├── main.tf
         ├── outputs.tf
         └── variables.tf
+```
 
 `main.tf`
 ```hcl
@@ -90,7 +91,7 @@ module "s3" {
 It is recommended to explicitly constraining the acceptable version numbers to avoid unexpected or unwanted changes.
 
 `main.tf`  
-```hcl filename="main.tf"
+```terraform filename="main.tf"
 provider "aws" {
   region = "us-west-2"
 }
