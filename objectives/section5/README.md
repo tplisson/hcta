@@ -79,7 +79,7 @@ resource "aws_elb" "example" {
 ```
 
 `main.tf`
-```hcl
+```hcl {title="main.tf"}
 module "s3" {
   source = "./modules/s3"
 }
