@@ -32,32 +32,18 @@ Expiration |	2 years
 
 Section | Description     |
 ------- | --------------- |  
-1	| [Understand infrastructure as code (IaC) concepts](sections/section1)
-2	| [Understand the purpose of Terraform (vs other IaC)](sections/section2)
-3	| [Understand Terraform basics](sections/section3)
-4	| [Use Terraform outside of core workflow](sections/section4)
-5	| [Interact with Terraform modules](sections/section5)
-6	| [Use the core Terraform workflow](sections/section6)
-7	| [Implement and maintain state](sections/section7)
-8	| [Read, generate, and modify configuration](sections/section8)
-9	| [Understand Terraform Cloud capabilities](sections/section9)
-
-
-
-Section | Description     |
-------- | --------------- |  
-1	| [Understand infrastructure as code (IaC) concepts](sections/section1)
+**1**	| **[Understand infrastructure as code (IaC) concepts](sections/section1)**
 1a	| Explain what IaC is
 1b	| Describe advantages of IaC patterns
-2	| [Understand the purpose of Terraform (vs other IaC)](sections/section2)
+**2**	| **[Understand the purpose of Terraform (vs other IaC)](sections/section2)**
 2a	| Explain multi-cloud and provider-agnostic benefits
 2b	| Explain the benefits of state
-3	| [Understand Terraform basics](sections/section3)
+**3**	| **[Understand Terraform basics](sections/section3)**
 3a | Install and version Terraform providers
 3b | Describe plugin-based architecture
 3c | Write Terraform configuration using multiple providers
 3d | Describe how Terraform finds and fetches providers
-4	| [Use Terraform outside of core workflow](sections/section4)
+**4**	| **[Use Terraform outside of core workflow](sections/section4)**
 4a | Describe when to use terraform import to import existing infrastructure into your Terraform state
 4b | Use terraform state to view Terraform state
 4c | Describe when to enable verbose logging and what the outcome/value is
