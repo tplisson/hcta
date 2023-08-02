@@ -17,9 +17,9 @@ Use `terraform import` when you want Terraform to manage resources that have alr
 
 ***Note***: *Be careful to import each remote object to only one Terraform resource address.*  
 
-### Importing externally-created objects with `terraform import`
+### Importing externally-created objects with `terraform import`  
 
-First write a resource block for it in your configuration, establishing the name by which it will be known to Terraform:
+First write a resource block for it in your configuration, establishing the name by which it will be known to Terraform:  
 
 ```hcl
 resource "aws_instance" "example" {
@@ -27,7 +27,7 @@ resource "aws_instance" "example" {
 }
 ```
 
-Now `terraform import` can be run to attach an existing instance to this resource configuration: 
+Now `terraform import` can be run to attach an existing instance to this resource configuration:   
 
 ```console
 terraform import aws_vpc.import vpc-05483b423b9e04565 
