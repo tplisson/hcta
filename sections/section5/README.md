@@ -84,11 +84,21 @@ module "s3" {
   source = "./modules/s3"
 }
 
-output "Bucket-name1" {
+output "bucket-name" {
   description = "The name of S3 bucket"
   value       = module.s3.bucket-name
 }
 ```
+
+`terraform apply`
+```terraform
+Apply complete! Resources: 0 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+bucket-name = "arn:aws:s3:::private-bucket-p790wabw80"
+```
+
 ---  
 
 ## 5d - Set module version
