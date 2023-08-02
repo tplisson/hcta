@@ -90,8 +90,11 @@ output "bucket-name" {
 }
 ```
 
-`terraform apply`
+```console
+terraform apply
+```
 ```terraform
+...
 Apply complete! Resources: 0 added, 0 changed, 0 destroyed.
 
 Outputs:
