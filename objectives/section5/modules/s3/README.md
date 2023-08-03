@@ -4,14 +4,17 @@ This is a simple module to create a private S3 Bucket
 
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5.10.0 |
+| <a name="requirement_random"></a> [random](#requirement\_random) | >= 3.5.1 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
-| <a name="provider_random"></a> [random](#provider\_random) | n/a |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 5.10.0 |
+| <a name="provider_random"></a> [random](#provider\_random) | >= 3.5.1 |
 
 ## Modules
 
@@ -30,7 +33,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_name"></a> [name](#input\_name) | The S3 bucket name | `string` | `"private-bucket"` | no |
+| <a name="input_name"></a> [name](#input\_name) | The S3 bucket name | `string` | `"private-bucket-unique-name-to-be-defined"` | no |
 
 ## Outputs
 

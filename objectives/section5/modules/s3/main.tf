@@ -1,5 +1,5 @@
 /**
- * # Simple AWS S3 Bucket Module
+ * # Simple AWS S3 Bucket Module 
  *
  * This is a simple module to create a private S3 Bucket
  *
