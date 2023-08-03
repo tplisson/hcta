@@ -561,4 +561,92 @@ tolist([
 
 ## 8g	- Describe built-in dependency management (order of execution based)
 
+Documentation  
+https://developer.hashicorp.com/terraform/internals/graph
+
+Terraform builds a dependency graph from the Terraform configurations, and walks this graph to generate plans, refresh state, and more. 
+
+Terraform infers dependencies between resources based on the configuration given, so that resources are created and destroyed in the correct order. Occasionally, however, Terraform cannot infer dependencies between different parts of your infrastructure, and you will need to create an explicit dependency with the `depends_on` argument.
+
+Imagine you have an application running on your EC2 instance that expects to use a specific Amazon S3 bucket. You can use `depends_on` to explicitly declare the dependency. 
+```hcl
+resource "aws_s3_bucket" "example" { }
+
+resource "aws_instance" "example_c" {
+  ami           = data.aws_ami.amazon_linux.id
+  instance_type = "t2.micro"
+
+  depends_on = [aws_s3_bucket.example]          ######## Here
+}
+
+module "example_sqs_queue" {
+  source  = "terraform-aws-modules/sqs/aws"
+  version = "3.3.0"
+
+  depends_on = [aws_s3_bucket.example, aws_instance.example_c]
+}
+```
+
+### Target Resources
+
+Use the `-target` option so Terraform will plan to replace only the targeted resource.
+
+```console
+terraform plan -target="module.s3_bucket"
+```
+```hcl
+random_pet.bucket_name: Refreshing state... [id=learning-specially-tender-fawn]
+module.s3_bucket.aws_s3_bucket.this[0]: Refreshing state... [id=learning-specially-tender-fawn]
+module.s3_bucket.aws_s3_bucket_public_access_block.this[0]: Refreshing state... [id=learning-specially-tender-fawn]
+
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+-/+ destroy and then create replacement
+
+Terraform will perform the following actions:
+
+   random_pet.bucket_name must be replaced
+-/+ resource "random_pet" "bucket_name" {
+      ~ id        = "learning-specially-tender-fawn" -> (known after apply)
+      ~ length    = 3 -> 5 # forces replacement
+         (2 unchanged attributes hidden)
+    }
+
+   module.s3_bucket.aws_s3_bucket.this[0] must be replaced
+-/+ resource "aws_s3_bucket" "this" {
+      + acceleration_status         = (known after apply)
+      ~ arn                         = "arn:aws:s3:::learning-specially-tender-fawn" -> (known after apply)
+      ~ bucket                      = "learning-specially-tender-fawn" -> (known after apply) # forces replacement
+      ~ bucket_domain_name          = "learning-specially-tender-fawn.s3.amazonaws.com" -> (known after apply)
+      ~ bucket_regional_domain_name = "learning-specially-tender-fawn.s3.eu-west-1.amazonaws.com" -> (known after apply)
+      ~ hosted_zone_id              = "Z1BKCTXD74EZPE" -> (known after apply)
+      ~ id                          = "learning-specially-tender-fawn" -> (known after apply)
+      ~ region                      = "eu-west-1" -> (known after apply)
+      ~ request_payer               = "BucketOwner" -> (known after apply)
+      - tags                        = {} -> null
+      + website_domain              = (known after apply)
+      + website_endpoint            = (known after apply)
+         (2 unchanged attributes hidden)
+
+      ~ versioning {
+          ~ enabled    = false -> (known after apply)
+          ~ mfa_delete = false -> (known after apply)
+        }
+    }
+
+#...
+
+Plan: 4 to add, 0 to change, 4 to destroy.
+
+Changes to Outputs:
+  ~ bucket_arn  = "arn:aws:s3:::learning-specially-tender-fawn" -> (known after apply)
+  ~ bucket_name = "learning-specially-tender-fawn" -> (known after apply)
+
+Warning: Resource targeting is in effect
+
+#...
+```
+
+Terraform determines that `module.s3_bucket` depends on `random_pet.bucket_name`, and that the bucket name configuration has changed. Because of this dependency, Terraform will update both the upstream bucket name and the module you targeted for this operation. Resource targeting updates resources that the target depends on, but not resources that depend on it.
+
 ---  
