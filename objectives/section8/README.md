@@ -80,7 +80,9 @@ resource "aws_instance" "example" {
 
 #### Type Constraints
 
-To restrict the `type` of value that will be accepted as the value for a variable. This is optional but best practice.
+To restrict the `type` of value that will be accepted as the value for a variable. If no type constraint is set then a value of any type is accepted.
+
+*Note*: A type Constraint is optional but best practice.
 
 https://developer.hashicorp.com/terraform/language/expressions/type-constraints
 
@@ -121,7 +123,7 @@ variable "bool_var" {
 
 ##### Collection Types  
 
-allows multiple values of ***one*** other type to be grouped together as a single value. 
+Allows multiple values of ***one*** type to be grouped together as a single value. 
 
 - `list(<TYPE>)`
 - `set(<TYPE>)`
@@ -140,7 +142,7 @@ variable "set_var" {
   default     = ["item1", "item2", "item3"]
 }
 
-variable "instance_tags" {
+variable "map_var" {
   description = "ordered collection of distinct values"
   type        = map(string)
   default     = { Name = "my-instance" }
@@ -149,7 +151,7 @@ variable "instance_tags" {
 
 ##### Structural Types  
 
-allows multiple values of ***several*** distinct types to be grouped together as a single value. 
+Allows multiple values of ***several*** distinct types to be grouped together as a single value. 
 
 - `tuple([<TYPE>, ...])`
 - `object({<ATTR NAME> = <TYPE>, ... })`
@@ -168,12 +170,14 @@ variable "object_var" {
 }
 ```
 
+##### `any` Type
 
-The keyword any may be used to indicate t
+The keyword `any` may be used to indicate that any type is acceptable.  
+
 
 ### Custom Validation Rules
 
-validation - A block to define validation rules, usually in addition to type constraints.
+A `validation` block can define validation rules, usually in addition to type constraints.
 
 ```hcl
 variable "another_var" {
@@ -199,17 +203,17 @@ variable "image_id" {
 
 ---  
 
-### Outputs
+### Outputs  
 
-Documentation:
-https://developer.hashicorp.com/terraform/language/values/outputs
+Documentation:  
+https://developer.hashicorp.com/terraform/language/values/outputs  
 
 
-Each output value exported by a module must be declared using an output block.
+Each output value exported by a module must be declared using an output block.  
 
-Declaring an output value using the `output` block 
+Declaring an output value using the `output` block   
 
-`output.tf` file:
+`outputs.tf` file:
 ```hcl
 output "vpc_name" {
   value = aws_vpc.outputs.tags[*].Name
@@ -302,12 +306,12 @@ vpc = {
 ```
 
 
-Note: Outputs are only rendered when Terraform applies your plan. Running terraform plan will not render outputs.
+*Note*: Outputs are only rendered when Terraform applies your plan. Running terraform plan will not render outputs.  
 
 
 ### Accessing Child Module Outputs
 
-In a parent module, outputs of child modules are available in expressions as `module.<MODULE NAME>.<OUTPUT NAME>`. 
+In a parent module, outputs of child modules are available in expressions as `module.<MODULE_NAME>.<OUTPUT_NAME>` (not the root module name).
 
 ```hcl
 module "vpc" {
@@ -317,13 +321,47 @@ module "vpc" {
 }
 
 output "vpc_name" {
-  value = module.vpc.vpc_name
-}
+  value = module.vpc.vpc_name     ### notice `vpc_name` is an output name 
+}                                 ### from the `vpc` child module
+                                  ### Don't use root module outputs for `aws_vpc`
 ```
 
 ---  
 
 ## 8b	- Describe secure secret injection best practice
+
+It is recommended to avoid placing secrets in your Terraform config or state file wherever possible, and if placed there, you take steps to reduce and manage your risk. 
+
+[HashiCorp Vault](https://www.vaultproject.io) can help in that regards. 
+
+The [Terraform provider for Vault](https://registry.terraform.io/providers/hashicorp/vault/latest) allows Terraform to read from, write to, and configure HashiCorp Vault.
+
+
+```hcl
+provider "vault" {
+  # It is strongly recommended to configure this provider through the
+  # environment variables described above, so that each user can have
+  # separate credentials set in the environment.
+  #
+  # This will default to using $VAULT_ADDR
+  # But can be set explicitly
+  # address = "https://vault.example.net:8200"
+}
+
+resource "vault_generic_secret" "example" {
+  path = "secret/foo"
+
+  data_json = jsonencode(
+    {
+      "foo"   = "bar",
+      "pizza" = "cheese"
+    }
+  )
+}
+```
+
+Tutorial : Inject Secrets into Terraform Using the Vault Provider    
+https://developer.hashicorp.com/terraform/tutorials/secrets/secrets-vault
 
 ---  
 
