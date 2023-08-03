@@ -2,13 +2,13 @@
 
 ## Exam objectives
 
-Section | Description |
-------- | ----------- |  
-**5**	| **Interact with Terraform modules**
-5a | Contrast and use different module source options including the public Terraform Module Registry
-5b | Interact with module inputs and outputs
-5c | Describe variable scope within modules/child modules
-5d | Set module version
+| Section | Description |
+| ------- | ----------- |  
+| **5**	| **Interact with Terraform modules** |
+| 5a | [Contrast and use different module source options including the public Terraform Module Registry](#5a---contrast-and-use-different-module-source-options-including-the-public-terraform-module-registry) |
+| 5b | Interact with module inputs and outputs |
+| 5c | Describe variable scope within modules/child modules |
+| 5d | Set module version |
 
 ---  
 

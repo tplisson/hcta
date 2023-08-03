@@ -12,7 +12,7 @@ Section | Description |
 8d | [Create and differentiate resource and data configuration](#8d---create-and-differentiate-resource-and-data-configuration)
 8e | [Use resource addressing and resource parameters to connect resources together](#8e---use-resource-addressing-and-resource-parameters-to-connect-resources-together)
 8f | [Use HCL and Terraform functions to write configuration](#8f---use-hcl-and-terraform-functions-to-write-configuration)
-8g | [Describe built-in dependency management (order of execution based)](##8g---describe-built-in-dependency-management-order-of-execution-based)
+8g | [Describe built-in dependency management (order of execution based)](#8g---describe-built-in-dependency-management-order-of-execution-based)
 
 
 ---  
