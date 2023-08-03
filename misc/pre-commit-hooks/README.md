@@ -1,6 +1,6 @@
 # pre-commit Hooks
 
-`terraform fmt` command
+`terraform fmt` command  
 https://developer.hashicorp.com/terraform/cli/commands/fmt  
 
 terraform-docs  
