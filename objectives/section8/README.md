@@ -6,13 +6,13 @@
 Section | Description |
 ------- | ----------- |  
 **8** | **Read, generate, and modify configuration***
-8a | [Demonstrate use of variables and outputs](#8a---demonstrate-use-of-variables-and-outputs)
-8b | [Describe secure secret injection best practice](#8b---describe-secure-secret-injection-best-practice)
-8c | [Understand the use of collection and structural types](#8c---understand-the-use-of-collection-and-structural-types)
-8d | [Create and differentiate resource and data configuration](#8d---create-and-differentiate-resource-and-data-configuration)
-8e | [Use resource addressing and resource parameters to connect resources together](#8e---use-resource-addressing-and-resource-parameters-to-connect-resources-together)
-8f | [Use HCL and Terraform functions to write configuration](#8f---use-hcl-and-terraform-functions-to-write-configuration)
-8g | [Describe built-in dependency management (order of execution based)](#8g---describe-built-in-dependency-management-order-of-execution-based)
+8a | [Demonstrate use of variables and outputs](#8a--demonstrate-use-of-variables-and-outputs)
+8b | [Describe secure secret injection best practice](#8b--describe-secure-secret-injection-best-practice)
+8c | [Understand the use of collection and structural types](#8c--understand-the-use-of-collection-and-structural-types)
+8d | [Create and differentiate resource and data configuration](#8d--create-and-differentiate-resource-and-data-configuration)
+8e | [Use resource addressing and resource parameters to connect resources together](#8e--use-resource-addressing-and-resource-parameters-to-connect-resources-together)
+8f | [Use HCL and Terraform functions to write configuration](#8f--use-hcl-and-terraform-functions-to-write-configuration)
+8g | [Describe built-in dependency management (order of execution based)](#8g--describe-built-in-dependency-management-order-of-execution-based)
 
 
 ---  
