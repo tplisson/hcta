@@ -1,6 +1,6 @@
 output "name" {
   description = "random string to be used as unique bucket name"
-  value = random_string.rstring
+  value       = random_string.rstring
 }
 
 

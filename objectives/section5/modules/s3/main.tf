@@ -22,7 +22,7 @@ resource "aws_s3_bucket" "this" {
   bucket = local.bucket_name
 
   tags = {
-    Name        = local.bucket_name
+    Name = local.bucket_name
     Environment = "dev"
   }
 }
