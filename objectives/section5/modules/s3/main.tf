@@ -1,3 +1,10 @@
+/**
+ * # Simple AWS S3 Bucket Module
+ *
+ * This is a simple module to create a private S3 Bucket
+ *
+ */
+
 resource "aws_s3_bucket" "this" {
   bucket = local.bucket_name
 

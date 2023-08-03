@@ -43,6 +43,14 @@ module "vpc" {
 }
 ```
 
+Note: When writing your own private module, it is a good idea to use `terraform-docs` to automatically generate documentation in the format of your choice: Markdown , AsciiDoc, JSON, YAML... etc. See: 
+https://terraform-docs.io/user-guide/introduction/
+
+For instance:
+```console
+terraform-docs markdown table . > README.md 
+```
+
 ---  
 
 ## 5b - Interact with module inputs and outputs
