@@ -50,3 +50,4 @@ resource "random_string" "rstring" {
 locals {
   bucket_name = join("-", [var.name, random_string.rstring.result])
 }
+
