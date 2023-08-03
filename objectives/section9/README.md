@@ -8,17 +8,17 @@ https://developer.hashicorp.com/terraform/cloud-docs
 Section | Description |
 ------- | ----------- |  
 **9** |	**Understand Terraform Cloud capabilities**
-9a	| Explain how Terraform Cloud helps to manage infrastructure
-9b	| Describe how Terraform Cloud enables collaboration and governance
+9a	| [Explain how Terraform Cloud helps to manage infrastructure](#9a--explain-how-terraform-cloud-helps-to-manage-infrastructure)
+9b	| [Describe how Terraform Cloud enables collaboration and governance](#9b--describe-how-terraform-cloud-enables-collaboration-and-governance)
 
----  
+---   
 
-## 9a	- Explain how Terraform Cloud helps to manage infrastructure
+## 9a	- Explain how Terraform Cloud helps to manage infrastructure  
 
-Terraform Cloud helps teams collaborate on Infrastructure as Code by providing a stable and reliable environment for operations, shared state and secret data, access controls to manage permissions for team members, and a policy framework for governance.
+Terraform Cloud helps teams collaborate on Infrastructure as Code by providing a stable and reliable environment for operations, shared state and secret data, access controls to manage permissions for team members, and a policy framework for governance.  
 
-Terraform Cloud is a commercial SaaS product available at https://app.terraform.io. 
-
+Terraform Cloud is a commercial SaaS product available at https://app.terraform.io.   
+  
 How can you collaborate to manage infrastructure as code if Terraform state is stored on a local machine ? 
 Terraform Cloud solves this (and many more) by offering these features:
 - remote Terraform execution
@@ -38,14 +38,13 @@ Terraform Cloud has 3 main workflows for managing runs:
 
 ---  
 
-## 9b	- Describe how Terraform Cloud enables collaboration and governance
+## 9b	- Describe how Terraform Cloud enables collaboration and governance  
 
-Terraform Cloud offers a team-oriented remote Terraform workflow. 
+Terraform Cloud offers a team-oriented remote Terraform workflow.  
 
-By default, TF state is stored in local file `terraform.tfstate`
+By default, TF state is stored in local file `terraform.tfstate`  
 
 To use Terraform Cloud for remote state, set the `remote` backend:
-
 ```hcl
 terraform {
   backend "remote" {
@@ -57,16 +56,17 @@ terraform {
   }
 }
 ```
-### Terraform Cloud Organisations
+### Terraform Cloud Organisations  
 
-Organizations are a shared space for one or more teams to collaborate on workspaces.
+Organizations are a shared space for one or more teams to collaborate on workspaces.  
 
-### Terraform Cloud Users
+### Terraform Cloud Users  
 
-Each user can be part of one or more teams, which are granted permissions on workspaces within an organization. A user can be a member of multiple organizations.
+Each user can be part of one or more teams, which are granted permissions on workspaces within an organization. A user can be a member of multiple organizations.  
 
-### Terraform Cloud Teams
+### Terraform Cloud Teams  
 
+Documentation
 https://developer.hashicorp.com/terraform/cloud-docs/users-teams-organizations/teams
 
 Teams are groups of Terraform Cloud users within an organization.

@@ -1,4 +1,4 @@
-# HCTA Section 7 -- Implement and maintain state
+# HCTA Section 7 - Implement and maintain state
 
 ## Exam objectives
 
@@ -6,18 +6,18 @@
 Section | Description |
 ------- | ----------- |  
 **7** | **Implement and maintain state**
-7a | [Describe default local backend](#7a---describe-default-local-backend)
-7b | [Describe state locking](#7b---describe-state-locking)
-7c | [Handle backend and cloud integration authentication methods](#7c---handle-backend-and-cloud-integration-authentication-methods)
-7d | [Differentiate remote state back end options](#7d---differentiate-remote-state-back-end-options)
-7e | [Manage resource drift and Terraform state](#7e---manage-resource-drift-and-terraform-state)
-7f | [Describe backend block and cloud integration in configuration](#7f---describe-backend-block-and-cloud-integration-in-configuration)
-7g | [Understand secret management in state files](#7g---understand-secret-management-in-state-files)
+7a | [Describe default local backend](#7a--describe-default-local-backend)
+7b | [Describe state locking](#7b--describe-state-locking)
+7c | [Handle backend and cloud integration authentication methods](#7c--handle-backend-and-cloud-integration-authentication-methods)
+7d | [Differentiate remote state back end options](#7d--differentiate-remote-state-back-end-options)
+7e | [Manage resource drift and Terraform state](#7e--manage-resource-drift-and-terraform-state)
+7f | [Describe backend block and cloud integration in configuration](#7f--describe-backend-block-and-cloud-integration-in-configuration)
+7g | [Understand secret management in state files](#7g--understand-secret-management-in-state-files)
 
 
 ---  
 
-## 7a - Describe default local backend  
+## 7a - Describe default local backend    
 
 Backends define where Terraform's state snapshots are stored.
 
@@ -41,10 +41,10 @@ If supported by your backend*, Terraform will lock your state for all operations
 
 ---  
 
-## 7c	- Handle backend and cloud integration authentication methods
+## 7c	- Handle backend and cloud integration authentication methods  
 
 
-### CLI  
+### CLI    
 
 The `terraform login` command can be used to automatically obtain and save an API token for Terraform Cloud, Terraform Enterprise, or any other host that offers Terraform services. This is valide if you are running the Terraform CLI interactively.
 
@@ -54,7 +54,7 @@ terraform login [hostname]
 ```
 *Note*: If you don't provide an explicit hostname, Terraform will assume you want to log in* to Terraform Cloud at `app.terraform.io`.
 
-### `credentials` blocks  
+### `credentials` blocks   
 
 Otherwise, you can manually write `credentials` blocks.
 
@@ -64,7 +64,7 @@ credentials "app.terraform.io" {
 }
 ```
 
-### `TF_TOKEN_` Environment variable
+### `TF_TOKEN_` Environment variable  
 
 If you would prefer not to store your API tokens directly in the CLI configuration, you may use a host-specific environment variable. 
 
@@ -75,7 +75,7 @@ For example, for hostname `app.terraform.io`:
 TF_TOKEN_app_terraform_io
 ```
 
-### Credentials Helpers
+### Credentials Helpers  
 
 You can configure a credentials_helper to instruct Terraform to use a different credentials storage mechanism.
 
@@ -87,7 +87,7 @@ credentials_helper "example" {
 
 ---  
 
-## 7d	- Differentiate remote state back end options  
+## 7d	- Differentiate remote state back end options   
 
 A backend defines where Terraform stores its state data files.
 Storing TF state remotely provides granular access, integrity, security, availability, and collaboration.
@@ -102,11 +102,11 @@ Available Backends
 - [Kubernetes](#kubernetes)
 - [PostGRES Database](#postgres-database)
 
-### Local 
+### Local  
 
 By default, TF state is stored in local file `terraform.tfstate`
 
-### Remote 
+### Remote  
 
 Using Terraform Cloud 
 
@@ -122,7 +122,7 @@ terraform {
 }
 ```
 
-### Amazon S3
+### Amazon S3  
 
 ```hcl
 terraform {
@@ -134,7 +134,7 @@ terraform {
 }
 ```
 
-### Azure Blob Storage 
+### Azure Blob Storage   
 
 ```hcl
 terraform {
@@ -147,7 +147,7 @@ terraform {
 }
 ```
 
-### Consul
+### Consul  
 
 ```hcl
 terraform {
@@ -159,7 +159,7 @@ terraform {
 }
 ```
 
-### Google Cloud Storage 
+### Google Cloud Storage   
 
 ```hcl
 terraform {
@@ -170,7 +170,7 @@ terraform {
 }
 ```
 
-### Kubernetes
+### Kubernetes  
 
 ```hcl
 terraform {
@@ -181,7 +181,7 @@ terraform {
 }
 ```
 
-### PostGRES Database
+### PostGRES Database  
 
 ```hcl
 terraform {
@@ -193,7 +193,7 @@ terraform {
 
 ---  
 
-## 7e	- Manage resource drift and Terraform state
+## 7e	- Manage resource drift and Terraform state   
 
 ### Drift  
 The Terraform state file is a record of all resources Terraform manages. You should not make manual changes to resources controlled by Terraform, because the state file will be out of sync, or "drift," from the real infrastructure. If your state and configuration do not match your infrastructure, Terraform will attempt to reconcile your infrastructure, which may unintentionally destroy or recreate resources.

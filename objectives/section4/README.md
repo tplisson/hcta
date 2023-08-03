@@ -5,19 +5,19 @@
 Section | Description |
 ------- | ----------- |  
 **4**	| **Use Terraform outside of core workflow**
-4a | Describe when to use terraform import to import existing infrastructure into your Terraform state
-4b | Use terraform state to view Terraform state
-4c | Describe when to enable verbose logging and what the outcome/value is
+4a | [Describe when to use terraform import to import existing infrastructure into your Terraform state](#4a--describe-when-to-use-terraform-import-to-import-existing-infrastructure-into-your-terraform-state)
+4b | [Use terraform state to view Terraform state](#4b--use-terraform-state-to-view-terraform-state)
+4c | [Describe when to enable verbose logging and what the outcome/value is](#4c--describe-when-to-enable-verbose-logging-and-what-the-outcomevalue-is)
 
 ---  
 
-## 4a - Describe when to use `terraform import` to import existing infrastructure into your Terraform state
+## 4a - Describe when to use `terraform import` to import existing infrastructure into your Terraform state  
 
 Use `terraform import` when you want Terraform to manage resources that have already been deployed.  
 
 ***Note***: *Be careful to import each remote object to only one Terraform resource address.*  
 
-### Importing externally-created objects with `terraform import`  
+### Importing externally-created objects with `terraform import`   
 
 First write a resource block for it in your configuration, establishing the name by which it will be known to Terraform:  
 
@@ -102,7 +102,7 @@ resource "aws_vpc" "import" {
 
 ---  
 
-## 4b - Use `terraform state` to view Terraform state
+## 4b - Use `terraform state` to view Terraform state  
 
 To list resources within a Terraform state.
 
@@ -136,7 +136,7 @@ module.elb.aws_elb.main
 module.elb.module.secgroups.aws_security_group.sg
 ```
 
-### Terraform State Show  
+### Terraform State Show   
 
 To provide human-readable output from a state or plan file. 
 
@@ -218,7 +218,7 @@ terraform output lb_address
 
 ---  
 
-## 4c - Describe when to enable verbose logging and what the outcome/value is
+## 4c - Describe when to enable verbose logging and what the outcome/value is  
 
 Environment variables
 - `TF_LOG`

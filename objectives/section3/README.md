@@ -3,10 +3,10 @@
 Section | Description |
 ------- | ----------- |  
 **3**	| **Understand Terraform basics**
-3a | Install and version Terraform providers
-3b | Describe plugin-based architecture
-3c | Write Terraform configuration using multiple providers
-3d | Describe how Terraform finds and fetches providers
+3a | [Install and version Terraform providers](#3a--install-and-version-terraform-providers)
+3b | [Describe plugin-based architecture](#3b--describe-plugin-based-architecture)
+3c | [Write Terraform configuration using multiple providers](#3c--write-terraform-configuration-using-multiple-providers)
+3d | [Describe how Terraform finds and fetches providers](#3d--describe-how-terraform-finds-and-fetches-providers)
 
 ---  
 

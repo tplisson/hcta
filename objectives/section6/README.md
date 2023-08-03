@@ -1,4 +1,4 @@
-# HCTA Section 6 -- The core Terraform workflow
+# HCTA Section 6 - The core Terraform workflow
 
 ## Exam objectives
 
@@ -6,13 +6,13 @@
 Section | Description    |
 ------- | -------------- |  
 **6** | **Use the core Terraform workflow**
-6a | [Describe Terraform workflow ( Write -> Plan -> Create )](#6a---describe-terraform-workflow--write---plan---create)
-6b | [Initialize a Terraform working directory (terraform init)](#6b---initialize-a-terraform-working-directory-terraform-init)
-6c | [Validate a Terraform configuration (terraform validate)](#6c---validate-a-terraform-configuration-terraform-validate)
-6d | [Generate and review an execution plan for Terraform (terraform plan)](#6d---generate-and-review-an-execution-plan-for-terraform-terraform-plan)
-6e | [Execute changes to infrastructure with Terraform (terraform apply)](#6e---execute-changes-to-infrastructure-with-terraform-terraform-apply)
-6f | [Destroy Terraform managed infrastructure (terraform destroy)](#6f---destroy-terraform-managed-infrastructure-terraform-destroy)
-6g | [Apply formatting and style adjustments to a configuration (terraform fmt)](#6g---apply-formatting-and-style-adjustments-to-a-configuration-terraform-fmt)
+6a | [Describe Terraform workflow ( Write -> Plan -> Create )](#6a--describe-terraform-workflow--write---plan---create)
+6b | [Initialize a Terraform working directory (terraform init)](#6b--initialize-a-terraform-working-directory-terraform-init)
+6c | [Validate a Terraform configuration (terraform validate)](#6c--validate-a-terraform-configuration-terraform-validate)
+6d | [Generate and review an execution plan for Terraform (terraform plan)](#6d--generate-and-review-an-execution-plan-for-terraform-terraform-plan)
+6e | [Execute changes to infrastructure with Terraform (terraform apply)](#6e--execute-changes-to-infrastructure-with-terraform-terraform-apply)
+6f | [Destroy Terraform managed infrastructure (terraform destroy)](#6f--destroy-terraform-managed-infrastructure-terraform-destroy)
+6g | [Apply formatting and style adjustments to a configuration (terraform fmt)](#6g--apply-formatting-and-style-adjustments-to-a-configuration-terraform-fmt)
 
 
 ---  
