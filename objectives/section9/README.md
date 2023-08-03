@@ -27,6 +27,9 @@ Terraform Cloud solves this (and many more) by offering these features:
 - command-line integration 
 - remote state management with cross-workspace data sharing
 - private Terraform module registry
+- Cost estimation (AWS, Azure, GCP)
+- Sentinel integration (Policy-as-Code framework)
+
 
 Terraform Cloud has 3 main workflows for managing runs:
 - The **UI/VCS-driven run workflow**, which is the primary mode of operation.
