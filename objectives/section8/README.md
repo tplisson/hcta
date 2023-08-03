@@ -6,13 +6,13 @@
 Section | Description |
 ------- | ----------- |  
 **8** | **Read, generate, and modify configuration***
-8a | Demonstrate use of variables and outputs
-8b | Describe secure secret injection best practice
-8c | Understand the use of collection and structural types
-8d | Create and differentiate resource and data configuration
-8e | Use resource addressing and resource parameters to connect resources together
-8f | Use HCL and Terraform functions to write configuration
-8g | Describe built-in dependency management (order of execution based)
+8a | [Demonstrate use of variables and outputs](#8a---demonstrate-use-of-variables-and-outputs)
+8b | [Describe secure secret injection best practice](#8b---describe-secure-secret-injection-best-practice)
+8c | [Understand the use of collection and structural types](#8c---understand-the-use-of-collection-and-structural-types)
+8d | [Create and differentiate resource and data configuration](#8d---create-and-differentiate-resource-and-data-configuration)
+8e | [Use resource addressing and resource parameters to connect resources together](#8e---use-resource-addressing-and-resource-parameters-to-connect-resources-together)
+8f | [Use HCL and Terraform functions to write configuration](#8f---use-hcl-and-terraform-functions-to-write-configuration)
+8g | [Describe built-in dependency management (order of execution based)](#8g---describe-built-in-dependency-management-order-of-execution-based)
 
 
 ---  
@@ -86,11 +86,20 @@ To restrict the `type` of value that will be accepted as the value for a variabl
 
 https://developer.hashicorp.com/terraform/language/expressions/type-constraints
 
-Main types supported:
+Input variable types supported:
 - Primitive 
+  - `string = "hello"`
+  - `number =  123 | 6.28`
+  - `bool   = true | false`  
+  - `any`
 - Complex
   - Collection
+    - `list(<TYPE>)`
+    - `set(<TYPE>)`
+    - `map(<TYPE>)`
   - Structural
+    - `tuple([<TYPE>, ...])`
+    - `object({<ATTR NAME> = <TYPE>, ... })`
 
 
 
@@ -121,54 +130,8 @@ variable "bool_var" {
 - Collection
 - Structural
 
-##### Collection Types  
+See [section 8c](#8c---understand-the-use-of-collection-and-structural-types)
 
-Allows multiple values of ***one*** type to be grouped together as a single value. 
-
-- `list(<TYPE>)`
-- `set(<TYPE>)`
-- `map(<TYPE>)`
-
-```hcl
-variable "list_var" {
-  description = "ordered sequence of values"
-  type        = list(string)
-  default     = ["us-east-1a", "us-east-1b", "us-east-1c"]
-}
-
-variable "set_var" {
-  description = "unordered collection of distinct values"
-  type        = set(string)
-  default     = ["item1", "item2", "item3"]
-}
-
-variable "map_var" {
-  description = "ordered collection of distinct values"
-  type        = map(string)
-  default     = { Name = "my-instance" }
-}
-```
-
-##### Structural Types  
-
-Allows multiple values of ***several*** distinct types to be grouped together as a single value. 
-
-- `tuple([<TYPE>, ...])`
-- `object({<ATTR NAME> = <TYPE>, ... })`
-
-```hcl
-variable "tuple_var" {
-  description = "fixed-length collection that can contain values of different data types"
-  type        = tuple([string, number, bool])
-  default     = ["a", 15, true]
-}
-
-variable "object_var" {
-  description = "multiple key-value pairs, where each key is associated with a specific data type for its corresponding value"
-  type        = object({ name = string, age = number })
-  default     = { name = "John", age = 52 }
-}
-```
 
 ##### `any` Type
 
@@ -367,17 +330,232 @@ https://developer.hashicorp.com/terraform/tutorials/secrets/secrets-vault
 
 ## 8c	- Understand the use of collection and structural types
 
+### Collection Types  
+
+Allows multiple values of ***one*** type to be grouped together as a single value. 
+
+- `list(<TYPE>)`
+- `set(<TYPE>)`
+- `map(<TYPE>)`
+
+```hcl
+variable "list_var" {
+  description = "ordered sequence of values"
+  type        = list(string)
+  default     = ["us-east-1a", "us-east-1b", "us-east-1c"]
+}
+
+variable "set_var" {
+  description = "unordered collection of distinct values"
+  type        = set(string)
+  default     = ["item1", "item2", "item3"]
+}
+
+variable "map_var" {
+  description = "ordered collection of distinct values"
+  type        = map(string)
+  default     = { Name = "my-instance" }
+}
+```
+
+### Structural Types  
+
+Allows multiple values of ***several*** distinct types to be grouped together as a single value. 
+
+- `tuple([<TYPE>, ...])`
+- `object({<ATTR NAME> = <TYPE>, ... })`
+
+```hcl
+variable "tuple_var" {
+  description = "fixed-length collection that can contain values of different data types"
+  type        = tuple([string, number, bool])
+  default     = ["a", 15, true]
+}
+
+variable "object_var" {
+  description = "multiple key-value pairs, where each key is associated with a specific data type for its corresponding value"
+  type        = object({ name = string, age = number })
+  default     = { name = "John", age = 52 }
+}
+```
+
 ---  
 
-## 8d	- Create and differentiate resource and data configuration
+## 8d	- Create and differentiate resource and data configuration  
+ 
+### Resources  
+Resources are the most important element in the Terraform language. Each resource block describes one or more infrastructure objects
+
+```hcl
+resource "aws_instance" "web" {
+  ami           = "ami-a1b2c3d4"
+  instance_type = "t2.micro"
+}
+```
+  
+### Data Sources  
+
+Data sources allow Terraform to use information defined outside of Terraform, defined by another separate Terraform configuration, or modified by functions.
+
+```hcl
+data "aws_ami" "example" {
+  most_recent = true
+
+  owners = ["self"]
+  tags = {
+    Name   = "app-server"
+    Tested = "true"
+  }
+}
+```
+
+Each data instance will export one or more attributes, which can be used in other resources as reference expressions of the form data.<TYPE>.<NAME>.<ATTRIBUTE>. 
+
+```hcl
+resource "aws_instance" "web" {
+  ami           = data.aws_ami.web.id
+  instance_type = "t1.micro"
+}
+```
 
 ---  
 
 ## 8e	- Use resource addressing and resource parameters to connect resources together
 
+Documentation  
+https://developer.hashicorp.com/terraform/cli/v1.1.x/state/resource-addressing  
+
+A resource address is a string that identifies resource instances in your configuration.
+
+An address is made up of two parts:
+```hcl
+[module path][resource spec]
+```
+
+### Module path  
+A module path addresses a module within the tree of modules. It takes the form:
+```hcl
+module.module_name[module index]
+```
+
+An example of the module keyword delineating between two modules that have multiple instances:
+
+```hcl
+module.foo[0].module.bar["a"]
+```
+
+### Resource spec  
+A resource spec addresses a specific resource instance in the selected module. It has the following syntax:
+
+```hcl
+resource_type.resource_name[instance index]
+```
+
+
+### `count` Example
+
+Given a Terraform config that includes:
+
+```hcl
+resource "aws_instance" "web" {
+  # ...
+  count = 4
+}
+```
+An address like this:
+```hcl
+aws_instance.web[3]
+```
+Refers to only the last instance in the config, and an address like this: 
+```hcl
+aws_instance.web
+```
+Refers to all four "web" instances.
+
+
+### `for_each` Example
+
+Given a Terraform config that includes:
+
+resource "aws_instance" "web" {
+  # ...
+  for_each = {
+    "terraform": "value1",
+    "resource":  "value2",
+    "indexing":  "value3",
+    "example":   "value4",
+  }
+}
+Copy
+An address like this:
+
+aws_instance.web["example"]
+Copy
+Refers to only the "example" instance in the config.
+
 ---  
 
-## 8f	- Use HCL and Terraform functions to write configuration
+## 8f	- Use HCL and Terraform functions to write configuration  
+
+Documentation:
+https://developer.hashicorp.com/terraform/language/functions
+
+
+### Test Terraform Built-In function with the Terraform console
+
+```console
+terraform console
+```
+
+```console
+> timestamp()
+"2023-07-25T14:37:11Z"
+
+> length("qwertyuiop1234567890")
+20
+
+> max(1,2,3,4,5,6,7,8,9,0)
+9
+
+> strcontains("terraform is awesome", "awesome")
+true
+
+> strcontains("terraform is awesome", "loosy")
+false
+
+> join("-", ["terraform", "is", "awesome"])
+"terraform-is-awesome"
+
+> split(",", "terraform,is,awesome")
+[
+  "foo",
+  "bar",
+  "baz",
+]
+
+> regex("[a-z]+", "09874509238475terraform23452345is64256453awesome098762345")
+"terraform"
+
+> length(regex("[a-z]+", "09874509238475terraform23452345is64256453awesome098762345"))
+9
+
+> regexall("[a-z]+", "09874509238475terraform23452345is64256453awesome098762345")
+tolist([
+  "terraform",
+  "is",
+  "awesome",
+])
+
+> regex("[a-z]+", "12345678900987654321123456789")
+╷
+│ Error: Error in function call
+│ 
+│   on <console-input> line 1:
+│   (source code not available)
+│ 
+│ Call to function "regex" failed: pattern did not match any part of the given string.
+╵
+```
 
 ---  
 
