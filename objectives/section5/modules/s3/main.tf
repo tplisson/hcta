@@ -5,6 +5,19 @@
  *
  */
 
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = ">= 5.10.0"
+    }
+    random = {
+      source  = "hashicorp/random"
+      version = ">= 3.5.1"
+    }
+  }
+}
+
 resource "aws_s3_bucket" "this" {
   bucket = local.bucket_name
 
