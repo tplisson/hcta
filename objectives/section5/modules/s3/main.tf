@@ -9,7 +9,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = ">= 5.08.0"
+      version = ">= 5.10.0"
     }
     random = {
       source  = "hashicorp/random"
@@ -22,7 +22,7 @@ resource "aws_s3_bucket" "this" {
   bucket = local.bucket_name
 
   tags = {
-    Name = local.bucket_name
+    Name        = local.bucket_name
     Environment = "dev"
   }
 }
