@@ -8,7 +8,7 @@
 | 5a | [Contrast and use different module source options including the public Terraform Module Registry](#5a--contrast-and-use-different-module-source-options-including-the-public-terraform-module-registry) |
 | 5b | [Interact with module inputs and outputs](#5b--interact-with-module-inputs-and-outputs) |
 | 5c | [Describe variable scope within modules/child modules](#5c--describe-variable-scope-within-moduleschild-modules) |
-| 5d | [Set module version](#5d--set-module-version) |
+| 5d | [Set module version](#5d---set-module-version) |
 
 ---  
 
@@ -112,7 +112,7 @@ bucket-name = "arn:aws:s3:::private-bucket-p790wabw80"
 
 ---  
 
-## 5d - Set module version
+## 5d - Set module version  
 
 It is recommended to explicitly constraining the acceptable version numbers to avoid unexpected or unwanted changes.
 
