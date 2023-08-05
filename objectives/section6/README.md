@@ -211,8 +211,6 @@ Note: You didn't use the -out option to save this plan, so Terraform can't guara
 
 The `terraform apply` command executes the actions proposed in a Terraform plan.  
 
-The `-auto-approve` option skips interactive approval of plan before applying.   
-
 ```shell
 terraform apply
 ```
@@ -319,7 +317,10 @@ aws_subnet.subnet1: Creating...
 aws_subnet.subnet1: Creation complete after 1s [id=subnet-0f0ffb188aa6aab0c]
 
 Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
-```
+```  
+
+The `-auto-approve` option skips interactive approval of plan before applying.    
+
 
 ---  
 
@@ -435,7 +436,8 @@ aws_vpc.section6: Destroying... [id=vpc-03114dc7b132ebf8e]
 aws_vpc.section6: Destruction complete after 1s
 
 Destroy complete! Resources: 2 destroyed.
-```
+```  
+
 ---  
 
 ## 6g	- Apply formatting and style adjustments to a configuration (terraform fmt)
