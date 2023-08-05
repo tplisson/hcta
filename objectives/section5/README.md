@@ -31,9 +31,13 @@ module "servers" {
   servers = 5
 }```
 
-Modules can either be loaded from the **local** filesystem, or a **remote** source. 
+### Module Source
 
-Terraform supports a variety of remote sources, including the Terraform Registry, most version control systems, HTTP URLs, and Terraform Cloud or Terraform Enterprise private module registries.
+Modules can be loaded from:
+- **local** filesystem
+- **remote** source:
+  - the [Terraform registry](https://registry.terraform.io/browse/modules)
+  - a *private* registry: a variety of sources are supported like most version control systems, HTTP URLs, and Terraform Cloud or Terraform Enterprise private module registries.
 
 The syntax for specifying a registry module is `<NAMESPACE>/<NAME>/<PROVIDER>`. 
 For example: `hashicorp/consul/aws`
@@ -48,7 +52,7 @@ provider "aws" {
   region = "us-west-2"
 }
 module "vpc" {
-  source  = "terraform-aws-modules/vpc/aws"  #### Module called here
+  source  = "terraform-aws-modules/vpc/aws"  #### Public module called here
   version = "3.18.1"
 
   name = var.vpc_name
@@ -64,6 +68,7 @@ module "vpc" {
 }
 ```
   
+### Module Documentation  
 
 Note: When writing your own private module, it is a good idea to use `terraform-docs` to automatically generate documentation in the format of your choice: Markdown , AsciiDoc, JSON, YAML... etc. See: 
 https://terraform-docs.io/user-guide/introduction/
