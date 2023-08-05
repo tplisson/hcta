@@ -94,7 +94,7 @@ credentials_helper "example" {
 A backend defines where Terraform stores its state data files.  
 Storing TF state remotely provides granular access, integrity, security, availability, and collaboration.
 
-Available Backends
+### Available Backends
 - [Local](#local)
 - [Remote](#remote)
 - [Amazon S3](#amazon-s3)
@@ -310,17 +310,17 @@ terraform {
 
 Terraform state can contain sensitive data. For resources such as databases, this may contain initial passwords.
 
-When using local state, state is stored in plain-text JSON files.
+When using local state, state is stored in plain-text JSON files (`terraform.tfstate`).
 
 When using remote state, state is only ever held in memory when used by Terraform. It may be encrypted at rest, but this depends on the specific remote state backend.
 
-**If you manage any sensitive data with Terraform (like database passwords, user passwords, or private keys), treat the state itself as sensitive data.**
+**If you manage any sensitive data with Terraform** (like database passwords, user passwords, or private keys), **treat the state itself as sensitive data.**
 
 Storing state remotely can provide better security.
 
-- Terraform Cloud always encrypts state at rest and protects it with TLS in transit.
-- The S3 backend supports encryption at rest when the encrypt option is enabled. Requests for the state go over a TLS connection.
-- HashiCorp Vault secures, stores, and tightly controls access to tokens, passwords, and other sensitive values.  
+- *Terraform Cloud* always encrypts state at rest and protects it with TLS in transit.
+- The *AWS S3* backend supports encryption at rest when the encrypt option is enabled. Requests for the state go over a TLS connection.
+- *HashiCorp Vault* secures, stores, and tightly controls access to tokens, passwords, and other sensitive values.  
 
 The approach to secret injection:
 - alleviates the Vault Admin's responsibility in managing numerous, multi-scoped, long-lived AWS credentials,
@@ -328,8 +328,8 @@ The approach to secret injection:
 - allows for management of a role's permissions through a Vault role rather than the distribution/management of static AWS credentials,
 - enables development to provision resources without managing local, static AWS credentials
 
-See Tutorial:
-Inject Secrets into Terraform Using the Vault Provider
+See Tutorial:  
+Inject Secrets into Terraform Using the Vault Provider  
 https://developer.hashicorp.com/terraform/tutorials/secrets/secrets-vault  
 
 ---  
