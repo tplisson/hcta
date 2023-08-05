@@ -13,7 +13,7 @@ Section | Description |
 
 ## 4a - Describe when to use `terraform import` to import existing infrastructure into your Terraform state  
 
-Use `terraform import` when you want Terraform to manage resources that have already been deployed.  
+Use [`terraform import`](https://developer.hashicorp.com/terraform/language/import) when you want Terraform to manage resources that have already been deployed.  
 
 ***Note***: *Be careful to import each remote object to only one Terraform resource address.*  
 
@@ -27,8 +27,14 @@ resource "aws_instance" "example" {
 }
 ```
 
-Now `terraform import` can be run to attach an existing instance to this resource configuration:   
+Now run `terraform import` to attach an existing instance to this resource configuration.
 
+Usage:
+```shell
+terraform import <resource-address> <resource-specific-id>
+```
+
+Example:
 ```shell
 terraform import aws_vpc.import vpc-05483b423b9e04565 
 ```
