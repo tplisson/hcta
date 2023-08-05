@@ -510,8 +510,8 @@ Refers to all four "web" instances.
 
 ### `for_each` Example
 
-Given a Terraform config that includes:
-
+Given a Terraform config that includes this:  
+```hcl
 resource "aws_instance" "web" {
   # ...
   for_each = {
@@ -521,12 +521,11 @@ resource "aws_instance" "web" {
     "example":   "value4",
   }
 }
-Copy
-An address like this:
-
+```
+An address like this refers to only the "example" instance in the config.
+```hcl
 aws_instance.web["example"]
-Copy
-Refers to only the "example" instance in the config.
+```
 
 ---  
 
