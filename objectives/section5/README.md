@@ -35,8 +35,8 @@ module "servers" {
 ### Module Source
 
 Modules can be loaded from:
-- **local** filesystem
-- **remote** source:
+- a **local** filesystem
+- a **remote** source:
   - the [Terraform registry](https://registry.terraform.io/browse/modules)
   - a *private* registry: a variety of sources are supported like most version control systems, HTTP URLs, and Terraform Cloud or Terraform Enterprise private module registries.
 
@@ -75,7 +75,7 @@ Note: When writing your own private module, it is a good idea to use `terraform-
 See:  
 https://terraform-docs.io/user-guide/introduction/
 
-For instance:
+For instance:  
 ```shell
 terraform-docs markdown table . > README.md 
 ```
