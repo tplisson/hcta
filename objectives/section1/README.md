@@ -22,10 +22,11 @@ With IaC, configuration files are created that contain your infrastructure speci
 ## 1b - Describe advantages of IaC patterns
 
 IaC includes the following benefits:
-- **More Reliable**: idempotent^1^, consistent, repeatable, and predictable
+- **More Reliable**: idempotent<sup>*</sup>, consistent, repeatable, and predictable
 - **More Manageable**: More Manageable using version control systems (VCS) for instance
 
-^1^ idempotent: denoting an element of a set which is unchanged in value when multiplied or otherwise operated on by itself.
+    <sup>*</sup>idempotent: denoting an element of a set which is unchanged in value when multiplied or otherwise operated on by itself.  
+    
 
 ---
 
