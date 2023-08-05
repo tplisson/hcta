@@ -21,7 +21,7 @@ Section | Description |
 
 Backends define where Terraform's state snapshots are stored.
 
-If a configuration includes no backend block, Terraform defaults to using the `local` backend, which stores state as a plain file in the current working directory.
+If a configuration includes no backend block, Terraform defaults to using the `local` backend, which stores state as a plain file in the current working directory. 
 
 ```hcl
 terraform {
@@ -31,13 +31,15 @@ terraform {
 }
 ```
 
+By default, TF state is stored in local file `terraform.tfstate` 
+
 ---  
 
 ## 7b	- Describe state locking  
 
-If supported by your backend*, Terraform will lock your state for all operations that could write state. This prevents others from acquiring the lock and potentially corrupting your state.
+If supported by your backend<sub>*</sub>, Terraform will lock your state for all operations that could write state. This prevents others from acquiring the lock and potentially corrupting your state.
 
-  *Note*: Some backends act like plain "remote disks" for state files; others support locking the state while operations are being performed, which helps prevent conflicts and inconsistencies.
+<sub>*</sub>*Note*: Some backends act like plain "remote disks" for state files; others support locking the state while operations are being performed, which helps prevent conflicts and inconsistencies.
 
 ---  
 
@@ -46,13 +48,13 @@ If supported by your backend*, Terraform will lock your state for all operations
 
 ### CLI    
 
-The `terraform login` command can be used to automatically obtain and save an API token for Terraform Cloud, Terraform Enterprise, or any other host that offers Terraform services. This is valide if you are running the Terraform CLI interactively.
+The `terraform login` command can be used to automatically obtain and save an API token for Terraform Cloud, Terraform Enterprise, or any other host that offers Terraform services. This is valid if you are running the Terraform CLI interactively.
 
 Usage: 
 ```shell
 terraform login [hostname]
 ```
-*Note*: If you don't provide an explicit hostname, Terraform will assume you want to log in* to Terraform Cloud at `app.terraform.io`.
+*Note*: If you don't provide an explicit hostname, Terraform will assume you want to log in to Terraform Cloud at `app.terraform.io`.
 
 ### `credentials` blocks   
 
@@ -66,9 +68,9 @@ credentials "app.terraform.io" {
 
 ### `TF_TOKEN_` Environment variable  
 
-If you would prefer not to store your API tokens directly in the CLI configuration, you may use a host-specific environment variable. 
+If you prefer not to store your API tokens directly in the CLI configuration, you may use a host-specific environment variable. 
 
-Environment variable names should have the prefix `TF_TOKEN_`` added to the domain name, with periods encoded as underscores. 
+Environment variable names should have the prefix `TF_TOKEN_` added to the domain name, with periods encoded as underscores. 
 
 For example, for hostname `app.terraform.io`:
 ```hcl
