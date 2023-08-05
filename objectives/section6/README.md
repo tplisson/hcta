@@ -211,7 +211,7 @@ Note: You didn't use the -out option to save this plan, so Terraform can't guara
 
 The `terraform apply` command executes the actions proposed in a Terraform plan.  
 
-      `-auto-approve` - Skips interactive approval of plan before applying.   
+The `-auto-approve` option skips interactive approval of plan before applying.   
 
 ```shell
 terraform apply
