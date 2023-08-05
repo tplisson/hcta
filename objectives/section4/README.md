@@ -62,7 +62,7 @@ aws_vpc.import
 Optionally, Terraform can [generate code](https://developer.hashicorp.com/terraform/language/import/generating-configuration) for the resources you define in import blocks that do not already exist in your configuration. 
 
 
-`import.tf`
+`imports.tf`
 ```hcl
 import {
   to = aws_vpc.import
