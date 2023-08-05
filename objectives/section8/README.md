@@ -24,6 +24,9 @@ Section | Description |
 Documentation:  
 https://developer.hashicorp.com/terraform/language/values/variables  
 
+
+## Basics
+
 Declaring an input variable using the `variable` block 
 
 `variables.tf` file:
@@ -77,6 +80,38 @@ resource "aws_instance" "example" {
 }
 ```
 
+### Variable Definitions (`.tfvars`) Files
+
+To set lots of variables, it is more convenient to specify their values in a variable definitions file (with a filename ending in either `.tfvars` or `.tfvars.json`) and then specify that file on the command line with `-var-file`:
+
+```console
+terraform apply -var-file="testing.tfvars"
+```
+
+A variable definitions file uses the same basic syntax as Terraform language files, but consists only of variable name assignments:
+
+`testing.tfvars`
+```hcl
+image_id = "ami-abc123"
+availability_zone_names = [
+  "us-east-1a",
+  "us-west-1c",
+]
+```
+
+
+### Environment Variables
+
+As a fallback for the other ways of defining variables, Terraform searches the environment of its own process for environment variables named `TF_VAR_` followed by the name of a declared variable.
+
+This can be useful when running Terraform in automation, or when running a sequence of Terraform commands in succession with the same variables. For example, at a bash prompt on a Unix system:
+
+```shell
+export TF_VAR_image_id=ami-abc123
+export TF_VAR_availability_zone_names='["us-west-1b","us-west-1d"]'
+terraform plan
+...
+```
 
 #### Type Constraints
 
