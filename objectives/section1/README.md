@@ -26,7 +26,7 @@ IaC includes the following benefits:
 - **More Manageable**: More Manageable using version control systems (VCS) for instance
 
     <sup>*</sup>idempotent: denoting an element of a set which is unchanged in value when multiplied or otherwise operated on by itself.  
-    
+
 
 ---
 

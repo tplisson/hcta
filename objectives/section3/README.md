@@ -52,7 +52,10 @@ Terraform is built on a plugin-based architecture, enabling developers to extend
 - **Terraform Core**: uses remote procedure calls (RPC) to communicate with Terraform Plugins, and offers multiple ways to discover and load plugins to use. 
 - **Terraform Plugins**: expose an implementation for a specific service, such as AWS, or provisioner, such as bash. Written in Go.  
 
-![Terraform Providers](../../images/tf-provider.webp)
+
+
+![Terraform Providers](../../images/tf-provider.webp)  
+
 
 Each provider adds a set of `resource` types and/or `data` sources that Terraform can manage.
 
