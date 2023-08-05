@@ -86,7 +86,7 @@ As a fallback for the other ways of defining variables, Terraform searches the e
 
 This can be useful when running Terraform in automation, or when running a sequence of Terraform commands in succession with the same variables. For example, at a bash prompt on a Unix system:
 
-```shell
+```zsh
 export TF_VAR_image_id=ami-abc123
 export TF_VAR_availability_zone_names='["us-west-1b","us-west-1d"]'
 terraform plan
