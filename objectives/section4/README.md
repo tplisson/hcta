@@ -363,9 +363,7 @@ cat terraform.log
 2023-07-31T15:15:38.243+0200 [TRACE] getproviders.SearchLocalDirectory: found registry.terraform.io/hashicorp/aws v5.10.0 for darwin_arm64 at .terraform/providers/registry.terraform.io/hashicorp/aws/5.10.0/darwin_arm64
 2023-07-31T15:15:38.243+0200 [TRACE] providercache.fillMetaCache: including .terraform/providers/registry.terraform.io/hashicorp/aws/5.10.0/darwin_arm64 as a candidate package for registry.terraform.io/hashicorp/aws 5.10.0
 ```
-  
 
-Logging can be enabled separately for terraform itself and the provider plugins using the `TF_LOG_CORE` or `TF_LOG_PROVIDER` environment variables. These take the same level arguments as TF_LOG, but only activate a subset of the logs.
 
 
 ---  
