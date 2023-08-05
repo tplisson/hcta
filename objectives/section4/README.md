@@ -31,7 +31,7 @@ Now run `terraform import` to attach an existing instance to this resource confi
 
 Usage:
 ```shell
-terraform import <resource-address> <resource-specific-id>
+terraform import <resource-address> <resource-specific-ID>
 ```
 
 Example:
@@ -59,8 +59,8 @@ aws_vpc.import
 ```
 
 
-Terraform can generate code for the resources you define in import blocks that do not already exist in your configuration. 
-https://developer.hashicorp.com/terraform/language/import/generating-configuration
+Optionally, Terraform can [generate code](https://developer.hashicorp.com/terraform/language/import/generating-configuration) for the resources you define in import blocks that do not already exist in your configuration. 
+
 
 `import.tf`
 ```hcl
