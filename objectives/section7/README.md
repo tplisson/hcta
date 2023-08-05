@@ -328,6 +328,8 @@ The approach to secret injection:
 - allows for management of a role's permissions through a Vault role rather than the distribution/management of static AWS credentials,
 - enables development to provision resources without managing local, static AWS credentials
 
+See objective [8b - Describe secure secret injection best practice](../section8/#8b--describe-secure-secret-injection-best-practice)
+
 See Tutorial: *Inject Secrets into Terraform Using the Vault Provider*  
 https://developer.hashicorp.com/terraform/tutorials/secrets/secrets-vault  
 
