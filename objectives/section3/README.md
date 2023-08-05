@@ -116,11 +116,11 @@ provider "aws" {
 
 ---  
 
-## 3d	- Describe how Terraform finds and fetches providers
+## 3d	- Describe how Terraform finds and fetches providers  
 
-The Terraform Registry is the main directory of publicly available Terraform providers, and hosts providers for most major infrastructure platforms.
+The Terraform Registry is the main directory of publicly available Terraform providers, and hosts providers for most major infrastructure platforms.  
 
-Terraform Registry
+Terraform Registry  
 https://registry.terraform.io/browse/providers
 
 
