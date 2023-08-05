@@ -87,7 +87,7 @@ credentials_helper "example" {
 
 ---  
 
-## 7d	- Differentiate remote state back end options   
+## 7d	- Differentiate remote state backend options   
 
 A backend defines where Terraform stores its state data files.
 Storing TF state remotely provides granular access, integrity, security, availability, and collaboration.
@@ -190,6 +190,66 @@ terraform {
   }
 }
 ```
+
+
+### The `terraform_remote_state` Data Source
+
+The terraform_remote_state data source uses the latest state snapshot from a specified state backend to retrieve the root module output values from some other Terraform configuration.
+
+When using remote state, root module outputs can be accessed by other configurations via a `terraform_remote_state` data source.
+
+#### Example Usage (`remote` Backend)
+
+```hcl
+data "terraform_remote_state" "vpc" {
+  backend = "remote"
+
+  config = {
+    organization = "hashicorp"
+    workspaces = {
+      name = "vpc-prod"
+    }
+  }
+}
+
+# Terraform >= 0.12
+resource "aws_instance" "foo" {
+  # ...
+  subnet_id = data.terraform_remote_state.vpc.outputs.subnet_id
+}
+
+# Terraform <= 0.11
+resource "aws_instance" "foo" {
+  # ...
+  subnet_id = "${data.terraform_remote_state.vpc.subnet_id}"
+}
+```
+
+#### Example Usage (`local` Backend)
+
+```hcl
+data "terraform_remote_state" "vpc" {
+  backend = "local"
+
+  config = {
+    path = "..."
+  }
+}
+
+# Terraform >= 0.12
+resource "aws_instance" "foo" {
+  # ...
+  subnet_id = data.terraform_remote_state.vpc.outputs.subnet_id
+}
+
+# Terraform <= 0.11
+resource "aws_instance" "foo" {
+  # ...
+  subnet_id = "${data.terraform_remote_state.vpc.subnet_id}"
+}
+```
+
+
 
 ---  
 
