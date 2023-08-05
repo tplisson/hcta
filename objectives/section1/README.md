@@ -13,16 +13,19 @@ Section | Description |
 
 ## 1a	- Explain what IaC is
 
-It is infrastructure (CPUs, memory, disk, firewalls, etc.) defined as code within definition files.
+Infrastructure as Code (IaC) is the managing and provisioning of infrastructure through code instead of through manual processes.
+
+With IaC, configuration files are created that contain your infrastructure specifications, which makes it easier to edit and distribute configurations. It also ensures that you provision the same environment every time. By codifying and documenting your configuration specifications, IaC aids configuration management and helps you to avoid undocumented, ad-hoc configuration changes.
 
 ---  
 
 ## 1b - Describe advantages of IaC patterns
 
 IaC includes the following benefits:
-- **More Reliable**: idempotent, consistent, repeatable, and predictable
-- **More Manageable**: More Manageable
+- **More Reliable**: idempotent^*^, consistent, repeatable, and predictable
+- **More Manageable**: More Manageable using version control systems (VCS) for instance
 
+^*^ idempotent: denoting an element of a set which is unchanged in value when multiplied or otherwise operated on by itself.
 
 ---
 
