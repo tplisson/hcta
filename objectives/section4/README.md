@@ -29,7 +29,7 @@ resource "aws_instance" "example" {
 
 Now `terraform import` can be run to attach an existing instance to this resource configuration:   
 
-```console
+```shell
 terraform import aws_vpc.import vpc-05483b423b9e04565 
 ```
 ```terraform
@@ -44,7 +44,7 @@ The resources that were imported are shown above. These resources are now in
 your Terraform state and will henceforth be managed by Terraform.
 ```
 
-```console
+```shell
 terraform state list                                 
 ```
 ```terraform
@@ -64,7 +64,7 @@ import {
 }
 ```
 
-```console
+```shell
 terraform plan -generate-config-out=generated.tf
 ```
 ```terraform
@@ -106,7 +106,7 @@ resource "aws_vpc" "import" {
 
 To list resources within a Terraform state.
 
-```console
+```shell
 terraform state list
 ```
 ```terraform 
@@ -118,7 +118,7 @@ module.elb.aws_elb.main
 
 Filtering by Resource  
 
-```console
+```shell
 terraform state list aws_instance.bar
 ```
 ```terraform 
@@ -128,7 +128,7 @@ aws_instance.bar[1]
 
 Filtering by Module  
 
-```console
+```shell
 terraform state list module.elb
 ```
 ```terraform 
@@ -140,7 +140,7 @@ module.elb.module.secgroups.aws_security_group.sg
 
 To provide human-readable output from a state or plan file. 
 
-```console
+```shell
 terraform state show module.vpc.aws_subnet.this
 ```
 ```terraform 
@@ -185,7 +185,7 @@ output "password" {
 }
 ```
 
-```console
+```shell
 terraform output
 ```
 ```terraform
@@ -198,7 +198,7 @@ lb_address = "my-app-alb-1657023003.us-east-1.elb.amazonaws.com"
 password = <sensitive>
 
 
-```console
+```shell
 terraform output instance_ips
 ```
 ```terraform
@@ -209,7 +209,7 @@ instance_ips = [
 ]
 ```
 
-```console
+```shell
 terraform output lb_address
 ```
 ```terraform
@@ -234,11 +234,11 @@ Environment variables
   - storing logs to a local file (persistant storage instead of `stderr`)
 
 
-```console
+```shell
 export TF_LOG=INFO
 ```
 
-```console
+```shell
 terraform init
 ```
 ```terraform
@@ -273,13 +273,13 @@ commands will detect it and remind you to do so if necessary.
 
 Storing logs in a local file
 
-```console
+```shell
 export TF_LOG=TRACE
 export TF_LOG_PATH=terraform.log
 ```
   
 
-```console
+```shell
 terraform init
 ```
 
@@ -302,10 +302,10 @@ rerun this command to reinitialize your working directory. If you forget, other
 commands will detect it and remind you to do so if necessary.
 ```
 
-```console
+```shell
 cat terraform.log 
 ```
-```console
+```shell
 2023-07-31T15:15:37.797+0200 [INFO]  Terraform version: 1.5.4
 2023-07-31T15:15:37.798+0200 [DEBUG] using github.com/hashicorp/go-tfe v1.26.0
 2023-07-31T15:15:37.798+0200 [DEBUG] using github.com/hashicorp/hcl/v2 v2.16.2

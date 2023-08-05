@@ -38,7 +38,7 @@ The `terraform init` command initializes a working directory containing Terrafor
 - Terraform creates a lock file, which records the versions and hashes of the providers used in this run.  
 
 
-```console
+```shell
 terraform init
 ```
 
@@ -73,7 +73,7 @@ commands will detect it and remind you to do so if necessary.
 The `terraform validate` command validates runs checks that verify whether a configuration is syntactically valid and internally consistent, regardless of any provided variables or existing state.  
 
 
-```console
+```shell
 terraform validate
 ```
 
@@ -82,7 +82,7 @@ Success! The configuration is valid.
 ```
 
 
-```console
+```shell
 terraform validate
 ```
 
@@ -105,7 +105,7 @@ The `terraform plan` command creates an execution plan, which lets you preview t
 - Compares the current configuration to the prior state and noting any differences.
 - Proposes a set of change actions that should, if applied, make the remote objects match the configuration.  
 
-```console
+```shell
 terraform plan
 ```
 ```terraform
@@ -211,7 +211,7 @@ The `terraform apply` command executes the actions proposed in a Terraform plan.
 
       `-auto-approve` - Skips interactive approval of plan before applying.   
 
-```console
+```shell
 terraform apply
 ```
 ```terraform
@@ -325,7 +325,7 @@ Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
 
 The `terraform destroy` command is a convenient way to destroy all remote objects managed by a particular Terraform configuration.  
 
-```console
+```shell
 terraform destroy
 ```
 ```terraform
@@ -452,7 +452,7 @@ resource "aws_subnet" "subnet1" {
 }
 ```
   
-```console
+```shell
 terraform fmt
 ```
 ```terraform

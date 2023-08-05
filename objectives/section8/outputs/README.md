@@ -28,7 +28,7 @@ output "vpc_cidr_block" {
 }
 ```
 
-```console
+```shell
 terraform apply --auto-approve
 ```
 ```terraform
@@ -56,7 +56,7 @@ output "vpc" {
   value = aws_vpc.outputs
 }
 ```
-```console
+```shell
 terraform apply --auto-approve
 ```
 ```terraform

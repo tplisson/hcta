@@ -49,7 +49,7 @@ If supported by your backend*, Terraform will lock your state for all operations
 The `terraform login` command can be used to automatically obtain and save an API token for Terraform Cloud, Terraform Enterprise, or any other host that offers Terraform services. This is valide if you are running the Terraform CLI interactively.
 
 Usage: 
-```console
+```shell
 terraform login [hostname]
 ```
 *Note*: If you don't provide an explicit hostname, Terraform will assume you want to log in* to Terraform Cloud at `app.terraform.io`.
@@ -194,7 +194,7 @@ terraform {
 
 ### The `terraform_remote_state` Data Source
 
-The terraform_remote_state data source uses the latest state snapshot from a specified state backend to retrieve the root module output values from some other Terraform configuration.
+The `terraform_remote_state` data source uses the latest state snapshot from a specified state backend to retrieve the root module output values from some other Terraform configuration.
 
 When using remote state, root module outputs can be accessed by other configurations via a `terraform_remote_state` data source.
 
@@ -265,7 +265,7 @@ Terraform relies on the contents of your workspace's state file to generate an e
 In Terraform, refreshing your state file updates Terraform's knowledge of your infrastructure, as represented in your state file, with the actual state of your infrastructure. 
 
 Usage
-```console
+```shell
 terraform refresh
 ```
 
@@ -276,7 +276,7 @@ Terraform `plan` and `apply` operations run an implicit in-memory refresh as par
 The `-refresh-only` flag for `plan` and `apply` operations makes it safer to check Terraform state against real infrastructure by letting you review proposed changes to the state file. 
 
 Usage
-```console
+```shell
 terraform plan -refresh-only
 terraform apply -refresh-only
 ```

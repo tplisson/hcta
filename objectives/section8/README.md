@@ -84,7 +84,7 @@ resource "aws_instance" "example" {
 
 To set lots of variables, it is more convenient to specify their values in a variable definitions file (with a filename ending in either `.tfvars` or `.tfvars.json`) and then specify that file on the command line with `-var-file`:
 
-```console
+```shell
 terraform apply -var-file="testing.tfvars"
 ```
 
@@ -230,7 +230,7 @@ output "vpc_cidr_block" {
 }
 ```
 
-```console
+```shell
 terraform apply --auto-approve
 ```
 ```terraform
@@ -258,7 +258,7 @@ output "vpc" {
   value = aws_vpc.outputs
 }
 ```
-```console
+```shell
 terraform apply --auto-approve
 ```
 ```terraform
@@ -538,11 +538,11 @@ https://developer.hashicorp.com/terraform/language/functions
 
 ### Test Terraform Built-In function with the Terraform console
 
-```console
+```shell
 terraform console
 ```
 
-```console
+```shell
 > timestamp()
 "2023-07-25T14:37:11Z"
 
@@ -626,7 +626,7 @@ module "example_sqs_queue" {
 
 Use the `-target` option so Terraform will plan to replace only the targeted resource.
 
-```console
+```shell
 terraform plan -target="module.s3_bucket"
 ```
 ```hcl

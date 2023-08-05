@@ -47,7 +47,7 @@ Note: When writing your own private module, it is a good idea to use `terraform-
 https://terraform-docs.io/user-guide/introduction/
 
 For instance:
-```console
+```shell
 terraform-docs markdown table . > README.md 
 ```
 
@@ -98,7 +98,7 @@ output "bucket-name" {
 }
 ```
 
-```console
+```shell
 terraform apply
 ```
 ```terraform

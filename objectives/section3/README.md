@@ -12,6 +12,8 @@ Section | Description |
 
 ## 3a	- Install and version Terraform providers
 
+Terraform providers are plugins that enable Terraform to interface with the API layer of various cloud platforms and environments.
+
 The default way to install provider plugins is from a provider registry.
 
 Terrform Registry  
