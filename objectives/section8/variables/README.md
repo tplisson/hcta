@@ -219,19 +219,3 @@ variable "image_id" {
 ### Type Constraints
 https://developer.hashicorp.com/terraform/language/expressions/type-constraints
 
-
-```hcl vars.tf
-variable "tuple_var" {
-  description = "fixed-length collection that can contain values of different data types"
-  type        = tuple([string, number, bool])
-  default     = ["a", 15, true]
-}
-```  
-
-```py title="bubble_sort.py"
-  def bubble_sort(items):
-    for i in range(len(items)):
-        for j in range(len(items) - 1 - i):
-            if items[j] > items[j + 1]:
-                items[j], items[j + 1] = items[j + 1], items[j]
-```
