@@ -105,6 +105,8 @@ resource "aws_vpc" "import" {
   }
 }
 ```
+  
+Review the generated configuration and update it as needed. You may wish to move the generated configuration to another file such as your `main.tf` file.
 
 ---  
 
@@ -175,7 +177,7 @@ resource "aws_subnet" "this" {
 
 Extract the value of an output variable from the state file.
 
-`outputs.tf` file:
+`outputs.tf`
 ```hcl
 output "instance_ips" {
   value = aws_instance.web.*.public_ip
@@ -202,7 +204,7 @@ instance_ips = [
 ]
 lb_address = "my-app-alb-1657023003.us-east-1.elb.amazonaws.com"
 password = <sensitive>
-
+```
 
 ```shell
 terraform output instance_ips
@@ -225,6 +227,8 @@ terraform output lb_address
 ---  
 
 ## 4c - Describe when to enable verbose logging and what the outcome/value is  
+
+Terraform has detailed logs that you can enable by setting the `TF_LOG` environment variable.
 
 Environment variables
 - `TF_LOG`
@@ -354,7 +358,10 @@ cat terraform.log
 2023-07-31T15:15:38.241+0200 [TRACE] providercache.fillMetaCache: scanning directory .terraform/providers
 2023-07-31T15:15:38.243+0200 [TRACE] getproviders.SearchLocalDirectory: found registry.terraform.io/hashicorp/aws v5.10.0 for darwin_arm64 at .terraform/providers/registry.terraform.io/hashicorp/aws/5.10.0/darwin_arm64
 2023-07-31T15:15:38.243+0200 [TRACE] providercache.fillMetaCache: including .terraform/providers/registry.terraform.io/hashicorp/aws/5.10.0/darwin_arm64 as a candidate package for registry.terraform.io/hashicorp/aws 5.10.0
-
 ```
+  
+
+Logging can be enabled separately for terraform itself and the provider plugins using the `TF_LOG_CORE` or `TF_LOG_PROVIDER` environment variables. These take the same level arguments as TF_LOG, but only activate a subset of the logs.
+
 
 ---  
