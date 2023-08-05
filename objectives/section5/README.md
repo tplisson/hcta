@@ -29,7 +29,8 @@ module "servers" {
   source = "./app-cluster"
 
   servers = 5
-}```
+}
+```
 
 ### Module Source
 
@@ -70,7 +71,8 @@ module "vpc" {
   
 ### Module Documentation  
 
-Note: When writing your own private module, it is a good idea to use `terraform-docs` to automatically generate documentation in the format of your choice: Markdown , AsciiDoc, JSON, YAML... etc. See: 
+Note: When writing your own private module, it is a good idea to use `terraform-docs` to automatically generate documentation in the format of your choice: Markdown , AsciiDoc, JSON, YAML... etc.  
+See:  
 https://terraform-docs.io/user-guide/introduction/
 
 For instance:
