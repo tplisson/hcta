@@ -241,7 +241,11 @@ Environment variables
     - `DEBUG`
     - `TRACE`
 - `TF_LOG_PATH`
-  - storing logs to a local file (persistant storage instead of `stderr`)
+  - Storing logs to a local file (persistant storage instead of `stderr`)
+- `TF_LOG_CORE` 
+  - Enabling debugging for terraform itself only
+- `TF_LOG_PROVIDER` 
+  - Enabling debugging for terraform provider plugins only
 
 
 ```shell
