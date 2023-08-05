@@ -18,7 +18,7 @@ The syntax for specifying a registry module is `<NAMESPACE>/<NAME>/<PROVIDER>`.
 For example: `hashicorp/consul/aws`
 
 You can also use modules from a *private* registry, like the one provided by Terraform Cloud. 
-Private registry modules have source strings of the form `<HOSTNAME>/<NAMESPACE>/<NAME>/<PROVIDER>`. So same format but prepended by a hostname prefix.
+Private registry modules have source strings of the form `<HOSTNAME>/<NAMESPACE>/<NAME>/<PROVIDER>`. So same format but a hostname prefix is prepended.
 
 
 `main.tf`  
