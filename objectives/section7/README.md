@@ -91,7 +91,7 @@ credentials_helper "example" {
 
 ## 7d	- Differentiate remote state backend options   
 
-A backend defines where Terraform stores its state data files.
+A backend defines where Terraform stores its state data files.  
 Storing TF state remotely provides granular access, integrity, security, availability, and collaboration.
 
 Available Backends
