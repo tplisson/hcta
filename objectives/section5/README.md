@@ -14,6 +14,27 @@
 
 ## 5a	- Contrast and use different module source options including the public Terraform Module Registry
 
+A *module* is a container for multiple resources that are used together.
+
+Every Terraform configuration has at least one module, known as its *root module*, which consists of the resources defined in the ``.tf` files in the main working directory.
+
+A module can call other modules, which lets you include the child module's resources into the configuration in a concise way. Modules can also be called multiple times, either within the same configuration or in separate configurations, allowing resource configurations to be packaged and re-used.
+
+### Calling a Child Module
+
+To call a module means to include the contents of that module into the configuration with specific values for its input variables. Modules are called from within other modules using `module` blocks:
+
+```hcl
+module "servers" {
+  source = "./app-cluster"
+
+  servers = 5
+}```
+
+Modules can either be loaded from the **local** filesystem, or a **remote** source. 
+
+Terraform supports a variety of remote sources, including the Terraform Registry, most version control systems, HTTP URLs, and Terraform Cloud or Terraform Enterprise private module registries.
+
 The syntax for specifying a registry module is `<NAMESPACE>/<NAME>/<PROVIDER>`. 
 For example: `hashicorp/consul/aws`
 
@@ -42,6 +63,7 @@ module "vpc" {
   tags = var.vpc_tags
 }
 ```
+  
 
 Note: When writing your own private module, it is a good idea to use `terraform-docs` to automatically generate documentation in the format of your choice: Markdown , AsciiDoc, JSON, YAML... etc. See: 
 https://terraform-docs.io/user-guide/introduction/
