@@ -5,9 +5,9 @@
 | Section | Description |
 | ------- | ----------- |  
 | **4**	| **Use Terraform outside of core workflow**
-| 4a | [Describe when to use terraform import to import existing infrastructure into your Terraform state](#4a--describe-when-to-use-terraform-import-to-import-existing-infrastructure-into-your-terraform-state)
-| 4b | [Use terraform state to view Terraform state](#4b--use-terraform-state-to-view-terraform-state)
-| 4c | [Describe when to enable verbose logging and what the outcome/value is](#4c--describe-when-to-enable-verbose-logging-and-what-the-outcomevalue-is)
+| 4a | [Describe when to use terraform import to import existing infrastructure into your Terraform state](#4a---describe-when-to-use-terraform-import-to-import-existing-infrastructure-into-your-terraform-state)
+| 4b | [Use terraform state to view Terraform state](#4b---use-terraform-state-to-view-terraform-state)
+| 4c | [Describe when to enable verbose logging and what the outcome/value is](#4c---describe-when-to-enable-verbose-logging-and-what-the-outcomevalue-is)
 
 ---  
 
