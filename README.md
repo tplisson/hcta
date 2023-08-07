@@ -1,4 +1,5 @@
-# HCTA Terraform Associate Certification (003) — Study Notes
+# HCTA HashiCorp Certified: Terraform Associate (003) — Study Notes
+HashiCorp Infrastructure Automation Certification
 
 [Exam objectives](https://www.hashicorp.com/certification/terraform-associate)
 
